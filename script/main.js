@@ -114,12 +114,14 @@ function createHex(p) {
 
   // Add hover listeners for desktop only
   hex.addEventListener('mouseenter', () => {
-    if (!isMobileDevice() && +hex.dataset.ring !== 0) {
+    // Allow hover flip for all hexes on non-mobile (including center)
+    if (!isMobileDevice()) {
       hex.classList.add('flipped');
     }
   });
   hex.addEventListener('mouseleave', () => {
-    if (!isMobileDevice() && +hex.dataset.ring !== 0) {
+    // Allow hover unflip for all hexes on non-mobile (including center)
+    if (!isMobileDevice()) {
       hex.classList.remove('flipped');
     }
   });

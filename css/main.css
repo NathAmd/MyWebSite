@@ -246,3 +246,20 @@
     gap: clamp(1vw, 1.2vw, 1.6vw);
   }
 }
+
+/* Prevent text selection and tap highlight inside the honeycomb (hex and children) */
+.honeycomb,
+.honeycomb * {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+/* Remove visible selection styling inside honeycomb */
+.honeycomb *::selection {
+  background: transparent;
+  color: inherit;
+}
