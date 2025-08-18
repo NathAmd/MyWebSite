@@ -1,0 +1,248 @@
+/* Honeycomb grid and hex styles */
+.honeycomb-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.honeycomb {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 1.2s cubic-bezier(.19,1,.22,1);
+  perspective: 2000px;
+  --spread-scale: .85;
+  pointer-events: auto;
+}
+
+.honeycomb.expanded { --spread-scale: 1; }
+
+.honeycomb .hex {
+  position: absolute;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  transition:
+    transform var(--flip-speed) cubic-bezier(.65,.02,.18,1),
+    filter .6s,
+    box-shadow .6s;
+  filter: drop-shadow(1vh 1vw rgba(0,0,0,.1));
+  will-change: transform;
+  overflow: hidden;
+}
+
+/* Centre hex */
+.hex[data-ring="0"] {
+  z-index: 20;
+}
+
+.honeycomb.expanded .hex {
+  opacity:1;
+}
+
+.hex .face {
+  position: absolute; 
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(0.6vh, 0.7vh, 1.2vh);
+  padding: clamp(0.8vh, 1vh, 1.6vh);
+  border-radius: var(--radius);
+  backface-visibility: hidden;
+  transform-origin: 50% 50%;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0)),
+    linear-gradient(135deg, var(--bg-alt), var(--bg));
+  clip-path: polygon(
+    30% 0%, 70% 0%,
+    100% 30%, 100% 70%,
+    70% 100%, 30% 100%,
+    0% 70%, 0% 30%
+  );
+  box-shadow:
+    0 0.8vh 1.6vh -0.8vh rgba(0,0,0,.5),
+    0 clamp(1.6vh, 1.8vh, 2.4vh) clamp(3vh, 3.2vh, 3.8vh) -1.2vh rgba(0,0,0,.55),
+    inset 0 0 0 0.2vh rgba(255,255,255,0.05);
+  overflow:hidden;
+  top: 0;
+  left: 0;
+}
+
+.hex .front { 
+  transform: rotateY(0deg);
+  z-index: 2;
+}
+
+.hex .back { 
+  transform: rotateY(180deg);
+  z-index: 1;
+  background:
+    linear-gradient(135deg, rgba(var(--accent-glow)/.08), rgba(var(--accent-glow)/0)),
+    linear-gradient(135deg, var(--bg), var(--bg-alt));
+}
+
+.hex.flipped .front { 
+  transform: rotateY(-180deg);
+  z-index: 1;
+}
+.hex.flipped .back { 
+  transform: rotateY(0deg);
+  z-index: 2;
+}
+
+.hex .face::after {
+  content:"";
+  position:absolute; inset:0;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(var(--accent-glow)/.18), transparent 65%);
+  opacity:0; transition:opacity .8s;
+  mix-blend-mode:screen;
+  pointer-events:none;
+}
+
+.hex:hover .face::after { opacity:1; }
+
+.hex:not(.flipped):hover {
+  filter: brightness(1.1);
+}
+
+.hex:focus-visible { outline: var(--focus-outline); outline-offset:0.4vh; }
+
+/* text sizes for desktop (vh) - reduced */
+.hex h2, .hex h3 {
+  font-size: clamp(1vh, 1.2vh, 1.6vh); /* smaller on desktop */
+  text-align:center;
+  line-height:1.2;
+  font-weight:600;
+  letter-spacing: clamp(0.02vh, 0.03vh, 0.05vh);
+  text-transform:uppercase;
+}
+
+.hex[data-ring="0"] h2 {
+  font-size: clamp(1.6vh, 1.9vh, 2.6vh); /* reduced centre heading */
+}
+
+.hex img {
+  max-width: clamp(45%, 55% + 1vw, 65%);
+  aspect-ratio: 1/1;
+  object-fit:cover;
+  border-radius: clamp(15%, 20% - 0.5vw, 25%);
+  filter:grayscale(.2) contrast(1.1);
+  transition:filter .6s, transform .8s;
+  box-shadow:0 clamp(0.6vw, 1vw, 1.2vw) clamp(1.5vw, 2vw, 2.5vw) -0.8vw rgba(0,0,0,.6);
+}
+
+.hex:hover img { filter:grayscale(0) saturate(1.2); transform:scale(1.06) rotateZ(-2deg); }
+
+.tags {
+  display:flex; flex-wrap:wrap; gap: clamp(0.2vw, 0.6vw, 1vw);
+  justify-content:center;
+}
+
+.tag {
+  font-size: clamp(1vh, 1.2vh, 1.6vh);
+  padding: clamp(0.6vh, 0.8vh, 1vh) clamp(1vh, 1.2vh, 1.6vh);
+  background:rgba(var(--accent-glow)/.12);
+  border:1px solid rgba(var(--accent-glow)/.35);
+  border-radius: 999px;
+  letter-spacing: clamp(0.02vh, 0.03vh, 0.04vh);
+  font-weight:500;
+  text-transform:uppercase;
+  color:var(--accent);
+}
+
+/* description text uses vh and reasonable max-width (desktop) */
+.desc {
+  font-size: clamp(1vh, 1.2vh, 1.6vh);
+  line-height:1.35;
+  text-align:center;
+  color: var(--fg-dim);
+  max-width: clamp(12vw, 14vw, 18vw);
+  margin-inline:auto;
+}
+
+/* buttons and hints (desktop vh) */
+.visit-btn {
+  margin-top: var(--space-xs);
+  font-size: clamp(1vh, 1.2vh, 1.6vh);
+  padding: clamp(0.8vh, 1vh, 1.4vh) clamp(1.2vh, 1.6vh, 2vh);
+  background: linear-gradient(135deg, var(--accent) 0%, #ffd479 100%);
+}
+
+.close-hint {
+  font-size: clamp(0.9vh, 1vh, 1.3vh);
+  opacity:.55;
+  margin-top: var(--space-xs);
+  font-style:italic;
+  letter-spacing: clamp(0.02vh, 0.03vh, 0.04vh);
+}
+
+@keyframes ripple {
+  from { width:0; height:0; opacity:.75; }
+  to { width:28vw; height:28vw; opacity:0; }
+}
+
+.honeycomb.parallax .hex {
+  will-change: transform;
+}
+
+@media (orientation: portrait) {
+  /* mobile portrait = width < height
+     use vw for font sizes and make them smaller than desktop (reduced) */
+
+  /* make long page, stack honeycomb for portrait */
+  .honeycomb {
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    height: auto;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 6vh;
+  }
+
+  /* hide description unless flipped (saves vertical space) */
+  .desc:not(.hex.flipped .desc) { display:none; }
+
+  /* text sizes in portrait (vw) - smaller than desktop vh sizes */
+  .hex h2, .hex h3 {
+    font-size: clamp(2vw, 2.2vw, 2.8vw); /* vw-based and reduced */
+  }
+  .hex[data-ring="0"] h2 {
+    font-size: clamp(2.4vw, 2.8vw, 3.6vw);
+  }
+
+  .tag {
+    font-size: clamp(1.6vw, 1.8vw, 2.2vw);
+  }
+
+  .desc {
+    display:block; /* when flipped */
+    font-size: clamp(1.8vw, 2vw, 2.6vw);
+    max-width: 94vw;
+  }
+
+  .visit-btn {
+    font-size: clamp(1.8vw, 2vw, 2.6vw);
+  }
+
+  .close-hint {
+    font-size: clamp(1.4vw, 1.6vw, 2vw);
+  }
+
+  /* reduce padding inside hex face on portrait (use vw to match mobile sizing) */
+  .hex .face {
+    padding: clamp(2vw, 2.4vw, 3.2vw); /* vw-based padding on mobile */
+    gap: clamp(1vw, 1.2vw, 1.6vw);
+  }
+}
