@@ -1,0 +1,28 @@
+{
+  "id": "undead-zone",
+  "ring": 1,
+  "angle": 60,
+  "titre": "Undead zone",
+  "image": "https://placehold.co/300x300/222a33/ffffff?text=UZ",
+  "description": "A game created years ago, which helped me learn from my mistakes—a source of motivation for my growth.",
+  "tags": ["Game", "Old"],
+  "url": "project.html?id=undead-zone",
+  "pageData": {
+    "paragraphs": [
+      "Undead Zone was one of my first major game projects, a zombie survival game that taught me invaluable lessons about game design, player feedback, and iterative development.",
+      "Though created years ago, this project remains a cornerstone of my development journey. Every bug fixed, every feature added, and every player review helped shape my approach to software development and problem-solving."
+    ],
+    "images": [
+      {
+        "url": "https://placehold.co/800x600/222a33/ffffff?text=Undead+Zone+1"
+      },
+      {
+        "url": "https://placehold.co/800x600/2a3341/ffffff?text=Undead+Zone+2"
+      }
+    ],
+    "customLink": {
+      "url": "https://store.steampowered.com/app/2329930/Undead_zone/",
+      "text": "View on Steam"
+    }
+  }
+}

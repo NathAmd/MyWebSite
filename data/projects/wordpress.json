@@ -1,0 +1,26 @@
+{
+  "id": "wordpress",
+  "ring": 1,
+  "angle": 240,
+  "titre": "Wordpress",
+  "image": "https://placehold.co/300x300/1f262e/ffffff?text=WP",
+  "description": "Creation of a complex theme with Three.js and a plugin to manage the theme and its database, for simple and efficient management.",
+  "tags": ["Pro"],
+  "url": "project.html?id=wordpress",
+  "pageData": {
+    "paragraphs": [
+      "This WordPress project showcases the integration of modern web technologies with traditional CMS platforms. The custom theme leverages Three.js for stunning 3D visualizations and interactive elements.",
+      "A companion plugin provides streamlined database management and theme configuration, making it easy for clients to maintain their site. The solution balances visual appeal with practical content management needs."
+    ],
+    "images": [
+      {
+        "url": "https://placehold.co/800x600/1f262e/ffffff?text=WordPress+Theme",
+        "placeholderText": "À modifier par IA"
+      },
+      {
+        "url": "https://placehold.co/800x600/272e36/ffffff?text=Admin+Panel",
+        "placeholderText": "À modifier par IA"
+      }
+    ]
+  }
+}

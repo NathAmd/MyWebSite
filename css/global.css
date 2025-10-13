@@ -1,143 +1,141 @@
-:root {
-  --bg: #0d0f12;
-  --bg-alt: #13171d;
-  --fg: #f5f7fa;
-  --fg-dim: #b8c2cc;
-  --accent: #ffb400;
-  --accent-glow: 255 180 0;
-  --danger: #ff4d4f;
-  --radius: clamp(0.6vw, 1.5vw, 2vw);
-  --transition: 0.6s cubic-bezier(.19,1,.22,1);
-  --flip-speed: 0.9s;
-  --focus-outline: 0.4vh solid var(--accent);
-  /* Espacement responsive */
-  --space-xs: clamp(0.4vh, 0.6vh, 1.2vh);
-  --space-sm: clamp(0.8vh, 1.2vh, 2.4vh);
-  --space-md: clamp(1.4vh, 2vh, 3.8vh);
-  --space-lg: clamp(1.8vh, 2.6vh, 5vh);
-  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+:root{
+  --bg:#0d0f12;
+  --bg-alt:#13171d;
+  --fg:#f5f7fa;
+  --fg-dim:#b8c2cc;
+  --accent:#ffffff;
+  --accent-glow:255 255 255;
+  --danger:#ff4d4f;
+  --radius:clamp(0.6vw,1.5vw,2vw);
+  --transition:.6s cubic-bezier(.19,1,.22,1);
+  --flip-speed:.9s;
+  --focus-outline:.4vh solid var(--accent);
+  --space-xs:clamp(.4vh,.6vh,1.2vh);
+  --space-sm:clamp(.8vh,1.2vh,2.4vh);
+  --space-md:clamp(1.4vh,2vh,3.8vh);
+  --space-lg:clamp(1.8vh,2.6vh,5vh);
+  --font-main:'Rajdhani','Orbitron','Segoe UI','Inter',system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Arial,sans-serif;
+  --font-title:'Rajdhani','Orbitron','Segoe UI',sans-serif;
+
+  --bg-main:#0a0e14;
+  --bg-gradient:radial-gradient(circle at 50% 40%, #1c2530, var(--bg));
+  --color-main:#ffffff;
+  --color-dim:rgba(255,255,255,.6);
+  --color-accent:#ffffff;
+  --color-card:rgba(26,35,50,.4);
+  --color-card-border:rgba(255,255,255,.15);
+  --color-btn-bg:rgba(0,0,0,.5);
+  --color-btn-border:rgba(255,255,255,.3);
+  --color-btn-hover:rgba(255,255,255,.1);
+  --color-btn-active:rgba(255,255,255,.1);
+  --scanlines:repeating-linear-gradient(0deg, rgba(0,0,0,.15), rgba(0,0,0,.15) 1px, transparent 1px, transparent 2px);
+
+  /* Normalise header/burger */
+  --header-h:56px;
 }
 
-* { box-sizing: border-box; padding:0; margin:0; }
-html,body { height:100%; }
-
-body {
-  background: radial-gradient(circle at 50% 40%, #1c2530, var(--bg)) fixed;
-  color: var(--fg);
-  -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
+*{box-sizing:border-box;padding:0;margin:0;}
+html,body{
+  width:100%; overflow-x:hidden; position:relative;
+  font-family:var(--font-main);
+  background:var(--bg-gradient) fixed;
+  color:var(--color-main);
+  -webkit-font-smoothing:antialiased;
 }
 
-body::before {
-  content:"";
-  position:fixed; inset:0;
+body::before{
+  content:""; position:fixed; inset:0; pointer-events:none; mix-blend-mode:overlay;
   background:
-    radial-gradient(circle at 50% 50%, rgba(255,255,255,0.04), transparent 60%),
-    repeating-linear-gradient(60deg, rgba(255,255,255,0.015) 0 0.15vw, transparent 0.15vw 0.6vw),
-    repeating-linear-gradient(-60deg, rgba(255,255,255,0.015) 0 0.15vw, transparent 0.15vw 0.6vw);
-  pointer-events:none;
-  mix-blend-mode:overlay;
+    radial-gradient(circle at 50% 50%, rgba(255,255,255,.04), transparent 60%),
+    repeating-linear-gradient(60deg, rgba(255,255,255,.015) 0 .15vw, transparent .15vw .6vw),
+    repeating-linear-gradient(-60deg, rgba(255,255,255,.015) 0 .15vw, transparent .15vw .6vw);
 }
 
-main { 
-  height: 100vh; 
-  display: flex; 
-  flex-direction: column; 
-  position: relative;
+main{display:flex; flex-direction:column; position:relative;}
+
+/* Header normalisé : hauteur fixe, padding horizontal seulement */
+header{
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  height:var(--header-h);
+  padding:0 var(--space-lg);
+  display:flex; align-items:center; justify-content:space-between;
+  backdrop-filter:blur(.8vh);
+  background:linear-gradient(135deg, rgba(0,0,0,.55), rgba(0,0,0,.15));
+  border-bottom:.08vw solid rgba(255,255,255,.08);
 }
 
-header {
-  position:fixed; top:0; left:0; right:0;
-  display:flex; justify-content:space-between; align-items:center;
-  padding: var(--space-sm) var(--space-lg); 
-  z-index:100;
-  backdrop-filter: blur(0.8vh);
-  background:linear-gradient(135deg, rgba(0,0,0,0.55), rgba(0,0,0,0.15));
-  border-bottom:0.08vw solid rgba(255,255,255,0.08);
-}
-
-header h1 {
-  font-size: clamp(1.6vh, 1.9vh, 2.6vh); /* desktop (vh) reduced */
-  letter-spacing: clamp(0.02vh, 0.03vh, 0.06vh);
+header h1{
+  font-family:var(--font-title);
+  font-size:clamp(1.6vh,1.9vh,2.6vh);
+  letter-spacing:clamp(.02vh,.03vh,.06vh);
   font-weight:600;
-  display:flex; gap: clamp(0.3ch, 0.5vw, 0.8ch); align-items:center;
+  display:flex; align-items:center; gap:clamp(.3ch,.5vw,.8ch);
 }
 
-.header-actions { display:flex; gap: var(--space-sm); }
+.header-actions{display:flex; gap:var(--space-sm);}
 
-button, .btn {
-  font:inherit;
-  cursor:pointer;
-  border:none;
-  background: linear-gradient(135deg, var(--accent) 0%, #ffce47 100%);
-  color:#222;
-  padding: clamp(0.8vh, 1vh, 1.6vh) clamp(1.2vh, 1.8vh, 3vh);
-  border-radius: 999px;
-  font-weight:600;
-  letter-spacing: clamp(0.02vh, 0.03vh, 0.04vh);
-  font-size: clamp(1vh, 1.2vh, 1.6vh); /* desktop (vh) reduced */
-  position:relative;
-  overflow:hidden;
-  box-shadow:0 0.8vh 3vh -0.6vh rgba(var(--accent-glow) / .65);
-  transition:transform .4s, box-shadow .4s;
+/* Boutons */
+button,.btn{
+  font:inherit; font-weight:600; letter-spacing:clamp(.02vh,.03vh,.04vh);
+  cursor:pointer; border:1px solid var(--color-btn-border);
+  background:transparent; color:var(--color-main);
+  padding:clamp(.8vh,1vh,1.6vh) clamp(1.2vh,1.8vh,3vh);
+  border-radius:2px; position:relative; overflow:hidden; box-shadow:none;
+  transition:all .3s ease; font-size:clamp(1vh,1.2vh,1.6vh);
+}
+button:hover,.btn:hover{ background:var(--color-btn-hover); border-color:var(--color-accent); transform:translateY(-2px);}
+button:active,.btn:active{ transform:translateY(0);}
+button:focus-visible,.btn:focus-visible{ outline:1px solid #fff; outline-offset:.6vh;}
+
+.theme-toggle{
+  background:var(--color-btn-bg); color:var(--fg-dim);
+  border:1px solid var(--color-btn-border); display:flex; align-items:center; gap:.5vh; font-weight:500;
+}
+.theme-toggle:hover{ color:var(--fg); background:var(--color-btn-hover); border-color:var(--color-accent); }
+
+a{color:#fff; text-decoration:none;}
+a:hover{text-decoration:underline;}
+
+/* Footer */
+footer{
+  position:fixed; left:0; right:0; bottom:0; z-index:50;
+  padding:var(--space-sm) var(--space-md);
+  text-align:center; font-size:clamp(1vh,1.2vh,1.6vh);
+  color:var(--fg-dim); letter-spacing:clamp(.02vh,.03vh,.06vh);
+  background:linear-gradient(135deg, rgba(0,0,0,.3), rgba(0,0,0,.1));
+  backdrop-filter:blur(.6vh);
+  border-top:.05vw solid rgba(255,255,255,.05);
 }
 
-button:hover, .btn:hover { transform:translateY(-0.3vh); box-shadow:0 1vh 4vh -0.4vh rgba(var(--accent-glow) / .75); }
-button:active, .btn:active { transform:translateY(0); }
-button:focus-visible, .btn:focus-visible { outline: var(--focus-outline); outline-offset:0.6vh; }
+/* Burger — carré, centré verticalement dans le header, taille stable */
+.menu-toggle{
+  position:fixed; left:clamp(.8rem, 2vw, 1.2rem);
+  top:calc((var(--header-h) - var(--burger-size))/2);
+  width:var(--burger-size); height:var(--burger-size); aspect-ratio:1/1;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px;
+  background:rgba(0,0,0,.15);
+  border:1px solid var(--color-btn-border); border-radius:6px; cursor:pointer; z-index:9999;
+  box-shadow:0 2px 8px rgba(0,0,0,.08); transition:all .2s;
+}
+.menu-toggle span{ width:calc(var(--burger-size) * 0.64); height:3px; background:#fff; border-radius:2px; display:block; transition:all .2s; }
+.menu-toggle:hover{ background:rgba(255,255,255,.1); border-color:#fff; }
+.menu-toggle.active span:nth-child(1){ transform:translateY(9px) rotate(45deg); }
+.menu-toggle.active span:nth-child(2){ opacity:0; }
+.menu-toggle.active span:nth-child(3){ transform:translateY(-9px) rotate(-45deg); }
 
-.theme-toggle {
-  background:linear-gradient(135deg, #2b2f36,#1d2228);
-  color:var(--fg-dim);
-  box-shadow:0 0.8vh 2.6vh -0.6vh rgba(0,0,0,.6), inset 0 0 0 0.2vh rgba(255,255,255,0.05);
-  display:flex; align-items:center; gap:0.5vh;
-  font-weight:500;
+/* Taille du burger contrôlée ici (sans override ailleurs) */
+:root{ --burger-size:44px; }
+
+/* Portrait tweaks */
+@media (orientation:portrait){
+  header h1{ font-size:clamp(3.4vw,3.6vw,4.8vw); }
+  button,.btn{ font-size:clamp(2.2vw,2.4vw,3vw); padding:clamp(2.4vw,2.8vw,3.6vw) clamp(3vw,3.4vw,4.4vw); }
+  footer{ font-size:clamp(2vw,2.2vw,2.8vw); }
+  body{ padding-bottom:8vh; }
 }
 
-.theme-toggle:hover { color:var(--fg); }
-
-a { color: var(--accent); text-decoration:none; }
-a:hover { text-decoration:underline; }
-
-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: var(--space-sm) var(--space-md);
-  text-align: center;
-  font-size: clamp(1vh, 1.2vh, 1.6vh); /* desktop (vh) reduced */
-  color: var(--fg-dim);
-  letter-spacing: clamp(0.02vh, 0.03vh, 0.06vh);
-  background: linear-gradient(135deg, rgba(0,0,0,0.3), rgba(0,0,0,0.1));
-  backdrop-filter: blur(0.6vh);
-  border-top: 0.05vw solid rgba(255,255,255,0.05);
-  z-index: 50;
-}
-
-footer a { color:var(--fg-dim); }
-footer a:hover { color:var(--accent); }
-
-@media (orientation: portrait) {
-
-  /* portrait = mobile: set vw-based sizes and reduce further */
-
-  header h1 {
-    font-size: clamp(3.4vw, 3.6vw, 4.8vw); /* vw, smaller than desktop vh */
-  }
-
-  button, .btn {
-    font-size: clamp(2.2vw, 2.4vw, 3vw);
-    padding: clamp(2.4vw, 2.8vw, 3.6vw) clamp(3vw, 3.4vw, 4.4vw);
-  }
-
-  footer {
-    font-size: clamp(2vw, 2.2vw, 2.8vw);
-  }
-
-  /* adjust header spacing for portrait */
-  header { padding: var(--space-xs) var(--space-sm); }
-
-  /* ensure body bottom padding enough for footer in portrait */
-  body { padding-bottom: 8vh; }
+/* Petits écrans — on ne touche pas la taille du burger, juste du layout */
+@media (max-width:400px){
+  :root{ --header-h:56px; } /* tu peux ajuster si tu veux un header plus compact */
+  /* pas d’override de width/height sur .menu-toggle ici → il reste carré et stable */
 }

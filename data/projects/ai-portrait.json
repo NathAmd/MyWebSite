@@ -1,0 +1,26 @@
+{
+  "id": "ai-portrait",
+  "ring": 1.7,
+  "angle": 30,
+  "titre": "AI Portrait",
+  "image": "https://placehold.co/300x300/2d1b3d/ffffff?text=AI+Portrait",
+  "description": "An interactive AI portrait that tracks your gaze using YOLO technology and responds to questions in real-time through a Unity interface.",
+  "tags": ["AI", "Fun"],
+  "url": "project.html?id=ai-portrait",
+  "pageData": {
+    "paragraphs": [
+      "This innovative AI portrait uses advanced YOLO computer vision to track the viewer's position and gaze direction in real-time. The portrait's eyes follow you as you move, creating an uncanny and engaging interactive experience.",
+      "Built with Unity for smooth rendering and real-time interaction, the system integrates speech recognition and natural language processing to respond to questions. The AI can engage in conversations, answer queries, and provide information while maintaining eye contact, creating a truly immersive experience."
+    ],
+    "images": [
+      {
+        "url": "https://placehold.co/800x600/2d1b3d/ffffff?text=Eye+Tracking+Demo",
+        "placeholderText": "À modifier par IA"
+      },
+      {
+        "url": "https://placehold.co/800x600/3d2b4d/ffffff?text=Unity+Interface",
+        "placeholderText": "À modifier par IA"
+      }
+    ]
+  }
+}

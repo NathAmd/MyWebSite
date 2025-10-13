@@ -1,0 +1,26 @@
+{
+  "id": "local-art-generator",
+  "ring": 1.7,
+  "angle": 150,
+  "titre": "Local Art Generator",
+  "image": "https://placehold.co/300x300/1d3a2f/ffffff?text=Art+Gen",
+  "description": "A local image generator that lets you choose multiple options to create unique artworks without relying on cloud services.",
+  "tags": ["AI", "Fun"],
+  "url": "project.html?id=local-art-generator",
+  "pageData": {
+    "paragraphs": [
+      "This standalone art generator runs entirely on your local machine, ensuring privacy and creative control. Select from various artistic styles, color palettes, composition rules, and themes to generate unique digital artworks.",
+      "Powered by local AI models, the generator offers real-time previews and adjustments. No internet connection required, no data sent to external servers—just pure creative freedom. Each artwork is uniquely generated based on your chosen parameters, from abstract patterns to detailed illustrations."
+    ],
+    "images": [
+      {
+        "url": "https://placehold.co/800x600/1d3a2f/ffffff?text=Generator+Interface",
+        "placeholderText": "À modifier par IA"
+      },
+      {
+        "url": "https://placehold.co/800x600/2d4a3f/ffffff?text=Generated+Art",
+        "placeholderText": "À modifier par IA"
+      }
+    ]
+  }
+}

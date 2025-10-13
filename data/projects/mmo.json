@@ -1,0 +1,28 @@
+{
+  "id": "mmo",
+  "ring": 1,
+  "angle": 0,
+  "titre": "MMO",
+  "image": "https://placehold.co/300x300/161b22/ffffff?text=MMO",
+  "description": "A turn-based tactical MMO, developed in C# for the server and Unity for the client.",
+  "tags": ["Game"],
+  "url": "project.html?id=mmo",
+  "pageData": {
+    "paragraphs": [
+      "This turn-based tactical MMO combines strategic depth with multiplayer engagement. Built with a robust C# server architecture and a sleek Unity client, it delivers smooth gameplay and real-time interactions.",
+      "The game features a comprehensive combat system, character progression, and social features. Players can form alliances, engage in tactical battles, and explore a rich fantasy world together."
+    ],
+    "images": [
+      {
+        "url": "https://placehold.co/800x600/161b22/ffffff?text=MMO+Screenshot+1"
+      },
+      {
+        "url": "https://placehold.co/800x600/1a2332/ffffff?text=MMO+Screenshot+2"
+      }
+    ],
+    "customLink": {
+      "url": "/game/mmo/index.html",
+      "text": "Play Demo"
+    }
+  }
+}

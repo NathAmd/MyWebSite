@@ -1,0 +1,28 @@
+{
+  "id": "cod-vr",
+  "ring": 1,
+  "angle": 120,
+  "titre": "CoD zombie VR",
+  "image": "https://placehold.co/300x300/192028/ffffff?text=VR",
+  "description": "A mod for a VR game on Unreal Engine, where I completely remade the map of a cult classic and its features. Over 300K downloads before an update to the original game made it obsolete.",
+  "tags": ["Mods"],
+  "url": "project.html?id=cod-vr",
+  "pageData": {
+    "paragraphs": [
+      "This ambitious VR mod brought the iconic Call of Duty Zombies experience to virtual reality. Built on Unreal Engine, I meticulously recreated beloved maps with full VR interaction, weapon mechanics, and the classic zombie wave system.",
+      "The mod achieved remarkable success with over 300,000 downloads from the community. Players praised the authentic recreation and smooth VR adaptation. Though eventually made obsolete by game updates, it stands as a testament to community-driven content creation."
+    ],
+    "images": [
+      {
+        "url": "https://placehold.co/800x600/192028/ffffff?text=VR+Mod+1"
+      },
+      {
+        "url": "https://placehold.co/800x600/212830/ffffff?text=VR+Mod+2"
+      }
+    ],
+    "customLink": {
+      "url": "https://mod.io/g/contractors/m/codzfive#description",
+      "text": "View on Mod.io"
+    }
+  }
+}
