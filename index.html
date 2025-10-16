@@ -2,10 +2,32 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio - Styloxis</title>
+  <title>STYLOXIS Portfolio</title>
+  <meta name="description" content="Discover the portfolio of STYLOXIS: projects in artificial intelligence, video games, mobile apps, generative art, and more. Expertise in development, design, and innovation.">
+  <meta name="keywords" content="STYLOXIS, portfolio, developer, artificial intelligence, video games, generative art, projects, innovation, artist, mobile apps, web, VR, poker AI, MMO, Wordpress">
+  <meta name="author" content="STYLOXIS">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://styloxis.be/">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="./css/global.css">
   <link rel="stylesheet" href="./css/main.css">
+  <!-- Structured Data JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "STYLOXIS",
+    "url": "https://styloxis.be/",
+    "image": "https://styloxis.be/assets/og-image.jpg",
+    "sameAs": [
+      "https://twitter.com/STYLOXIS"
+    ],
+    "jobTitle": "Full Stack Developer",
+    "description": "STYLOXIS portfolio: projects in artificial intelligence, video games, mobile apps, generative art, and more."
+  }
+  </script>
   <script type="importmap">
     {
       "imports": {
@@ -16,11 +38,11 @@
   </script>
 </head>
 <body class="home">
-  <canvas id="webgl-canvas"></canvas>
+  <canvas id="webgl-canvas" aria-label="3D background animation" role="img"></canvas>
 
   <div class="hud-overlay">
     <div class="top-logo-bar">
-      <span class="logo-text">STYLOXIS</span>
+  <span class="logo-text" itemprop="name">STYLOXIS</span>
     </div>
 
   <div class="side-menu" id="side-menu">
@@ -46,11 +68,11 @@
           <span class="stat-value" id="project-count">0</span>
         </div>
         <div class="menu-stat">
-          <span class="stat-label">XP SOLO</span>
+          <span class="stat-label">SOLO XP</span>
           <span class="stat-value">8Y+</span>
         </div>
         <div class="menu-stat">
-          <span class="stat-label">XP PRO</span>
+          <span class="stat-label">PRO XP</span>
           <span class="stat-value">1Y+</span>
         </div>
       </div>
@@ -62,12 +84,12 @@
       <span></span>
     </button>
 
-    <div class="hud-center">
+    <div class="hud-center" itemscope itemtype="https://schema.org/Person">
       <h1 class="main-title">
         <span class="title-line">FULL STACK</span>
         <span class="title-line highlight">DEVELOPER</span>
       </h1>
-      <p class="main-subtitle">Engineering future-ready <span class="fx-glow">Experiences</span>, <span class="fx-glow">Platforms</span>, and <span class="fx-glow">Worlds</span> with relentless <span class="fx-glow">Innovation</span></p>
+      <p class="main-subtitle" itemprop="description">Engineering future-ready <span class="fx-glow">Experiences</span>, <span class="fx-glow">Platforms</span>, and <span class="fx-glow">Worlds</span> with relentless <span class="fx-glow">Innovation</span></p>
     </div>
 
   <div class="scanlines"></div>
