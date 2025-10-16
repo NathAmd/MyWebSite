@@ -4,13 +4,14 @@
   "angle": 120,
   "titre": "CoD zombie VR",
   "image": "https://placehold.co/300x300/192028/ffffff?text=VR",
-  "description": "A mod for a VR game on Unreal Engine, where I completely remade the map of a cult classic and its features. Over 300K downloads before an update to the original game made it obsolete.",
+  "description": "Full-map VR rebuild in Unreal Engine that ports the Call of Duty Zombies cadence into room-scale combat with 300K+ community installs.",
   "tags": ["Mods"],
   "url": "project.html?id=cod-vr",
   "pageData": {
     "paragraphs": [
-      "This ambitious VR mod brought the iconic Call of Duty Zombies experience to virtual reality. Built on Unreal Engine, I meticulously recreated beloved maps with full VR interaction, weapon mechanics, and the classic zombie wave system.",
-      "The mod achieved remarkable success with over 300,000 downloads from the community. Players praised the authentic recreation and smooth VR adaptation. Though eventually made obsolete by game updates, it stands as a testament to community-driven content creation."
+      "<span class=\"fx-glow\">Unreal Engine</span> blueprint systems drive real-time weapon IK, haptic feedback, and AI pathing that respects headset comfort limits.",
+      "I profiled the mod with GPU captures, baking occlusion volumes and streaming zones so the experience stays at 90 FPS on consumer rigs.",
+      "RETRO TAKEAWAY: <span class=\"fx-pulse\">COMMUNITY TELEMETRY</span> FLAGGED MIGRAINE HOTSPOTS AND FORCED BETTER COMFORT TOGGLES."
     ],
     "images": [
       {

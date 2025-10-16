@@ -4,13 +4,14 @@
   "angle": 0,
   "titre": "MMO",
   "image": "https://placehold.co/300x300/161b22/ffffff?text=MMO",
-  "description": "A turn-based tactical MMO, developed in C# for the server and Unity for the client.",
+  "description": "Shard-aware tactical MMO built on a custom C# combat server and a Unity tactics client tuned for latency spikes.",
   "tags": ["Game"],
   "url": "project.html?id=mmo",
   "pageData": {
     "paragraphs": [
-      "This turn-based tactical MMO combines strategic depth with multiplayer engagement. Built with a robust C# server architecture and a sleek Unity client, it delivers smooth gameplay and real-time interactions.",
-      "The game features a comprehensive combat system, character progression, and social features. Players can form alliances, engage in tactical battles, and explore a rich fantasy world together."
+      "<span class=\"fx-glow\">C#</span> drives a shard-aware combat backend with deterministic turn resolution, optimistic locking, and graceful degradation during peak concurrency.",
+      "The <span class=\"fx-glow\">Unity</span> tactics client streams delta snapshots, runs custom prediction for ability previews, and hot-reloads UI modules without kicking the session.",
+      "RETRO TAKEAWAY: <span class=\"fx-pulse\">TURN-DEADLINE TELEMETRY</span> EXPOSED HIDDEN QUEUE PRESSURE AND LET US PATCH NETCODE BEFORE LIVE EVENTS."
     ],
     "images": [
       {

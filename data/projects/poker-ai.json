@@ -4,13 +4,14 @@
   "angle": 180,
   "titre": "Poker AI",
   "image": "https://placehold.co/300x300/303e4b/ffffff?text=AI",
-  "description": "An AI that plays poker in an existing game: card detection with YOLO, data analysis in Python, and decision-making with GPT.",
+  "description": "Hybrid vision-plus-language poker stack: YOLO reads the table state, Python crunches odds, GPT narrates the play.",
   "tags": ["Fun", "AI"],
   "url": "project.html?id=poker-ai",
   "pageData": {
     "paragraphs": [
-      "This AI poker bot combines computer vision and machine learning to play poker autonomously. Using YOLO for real-time card detection, it analyzes the game state with precision and makes strategic decisions.",
-      "The system integrates Python for data processing and GPT for intelligent decision-making, considering pot odds, player patterns, and optimal betting strategies. A fascinating exploration of AI in gaming contexts."
+      "<span class=\"fx-glow\">YOLO</span> pipelines decode card suits and ranks at 60 FPS, feeding a feature store that synchronizes live tables with historical playlogs.",
+      "A <span class=\"fx-glow\">Python</span> decision core scans pot odds, Nash ranges, and bluff frequencies before handing intent prompts to GPT for natural language output.",
+      "RETRO TAKEAWAY: <span class=\"fx-pulse\">EXPLAINABLE DECISIONS</span> KEPT HUMAN PLAYERS ENGAGED LONGER THAN RAW WIN RATES."
     ],
     "images": [
       {

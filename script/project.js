@@ -8,9 +8,18 @@ import {
 const S = makeState();
 let cameraPivot = null;
 const targetPos = new THREE.Vector3(0, 1.5, 0);
+// Orbit settings
+S.autoOrbit = true; // toggle automatic orbit
+S.orbitSpeed = 0.25; // radians per second
+// Camera constraints
+S.minCameraZ = 6; // don't allow camera z to go below this (closer to object)
 
-const setText = (id, text) => { const el = document.getElementById(id); if (el) el.textContent = text; };
+const setHTML = (id, html) => {
+  const el = document.getElementById(id);
+  if (el) el.innerHTML = html || '';
+};
 const hide = (id) => { const el = document.getElementById(id); if (el) el.style.display = 'none'; };
+const show = (id, display = '') => { const el = document.getElementById(id); if (el) el.style.display = display; };
 
 const errorPage = (message) => {
   const c = document.querySelector('.project-container');
@@ -42,9 +51,13 @@ const animate = () => {
 
   tickMaterialTime(S.hologramMaterial);
 
-    // cameraPivot.rotation.y += 0.003; // Désactivé : le modèle ne tourne plus
+    // Orbit the pivot (camera is child of pivot) when enabled
+  if (S.autoOrbit && window.innerWidth > 768) {
+    cameraPivot.rotation.y += S.orbitSpeed * d;
+  }
   const h = Math.sin(Date.now() * 0.0003) * 1.5;
-  cameraPivot.position.y = 2 + h;
+  // keep pivot vertically offset relative to target, plus small oscillation
+  cameraPivot.position.y = targetPos.y + 0.5 + h;
   cameraPivot.updateMatrixWorld();
 
   const isMobile = window.innerWidth <= 768;
@@ -68,19 +81,24 @@ const animate = () => {
   S.centerObject.position.z = Math.sin(t) * radius;
   S.centerObject.position.y = 0;
 
+  // Ensure camera doesn't get too close on the local Z axis
+  if (S.camera.position.z < S.minCameraZ) {
+    S.camera.position.z = S.minCameraZ;
+  }
+
   S.renderer.render(S.scene, S.camera);
 };
 
 const initThree = () => {
   const canvas = document.getElementById('webgl-canvas');
   S.scene = makeScene();
-
   cameraPivot = new THREE.Object3D();
-  cameraPivot.position.set(0, 2, 0);
+  // position pivot at target position (with a small upward offset) so rotation orbits the object
+  cameraPivot.position.set(targetPos.x, targetPos.y + 0.5, targetPos.z);
   S.scene.add(cameraPivot);
 
   S.camera = makeCamera();
-  S.camera.position.set(0, 1, 10);
+  S.camera.position.set(0, 1, 14);
   S.camera.lookAt(0, 0, 0);
   cameraPivot.add(S.camera);
 
@@ -100,8 +118,15 @@ const populate = (project) => {
   const { paragraphs, images, customLink } = data;
 
   if (paragraphs && paragraphs.length >= 2) {
-    setText('paragraph-1', paragraphs[0]);
-    setText('paragraph-2', paragraphs[1]);
+    setHTML('paragraph-1', paragraphs[0]);
+    setHTML('paragraph-2', paragraphs[1]);
+  }
+
+  if (paragraphs && paragraphs[2]) {
+    setHTML('paragraph-retro', paragraphs[2]);
+    show('paragraph-retro-section');
+  } else {
+    hide('paragraph-retro-section');
   }
 
   if (images && images.length >= 2) {

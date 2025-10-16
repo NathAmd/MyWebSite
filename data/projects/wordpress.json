@@ -4,13 +4,14 @@
   "angle": 240,
   "titre": "Wordpress",
   "image": "https://placehold.co/300x300/1f262e/ffffff?text=WP",
-  "description": "Creation of a complex theme with Three.js and a plugin to manage the theme and its database, for simple and efficient management.",
+  "description": "Custom WordPress stack marrying a Three.js front end with a guardrailed admin plugin for non-technical editors.",
   "tags": ["Pro"],
   "url": "project.html?id=wordpress",
   "pageData": {
     "paragraphs": [
-      "This WordPress project showcases the integration of modern web technologies with traditional CMS platforms. The custom theme leverages Three.js for stunning 3D visualizations and interactive elements.",
-      "A companion plugin provides streamlined database management and theme configuration, making it easy for clients to maintain their site. The solution balances visual appeal with practical content management needs."
+      "<span class=\"fx-glow\">Three.js</span> scenes render hero interactions while deferring heavy shaders and assets to priority queues for <span class=\"fx-bracket\">CORE WEB VITALS</span> compliance.",
+      "A bespoke <span class=\"fx-glow\">WordPress</span> plugin enforces schema, versioned content blocks, and deployment toggles so editors can schedule 3D updates safely.",
+      "RETRO TAKEAWAY: <span class=\"fx-pulse\">SCHEMA CONTRACTS</span> SAVED HOURS EVERY RELEASE BY PREVENTING BROKEN BUILDS."
     ],
     "images": [
       {

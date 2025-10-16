@@ -4,13 +4,14 @@
   "angle": 300,
   "titre": "Android/iOS App",
   "image": "https://placehold.co/300x300/25313b/ffffff?text=MOBILE",
-  "description": "Creation and publication of various mobile apps: data list management, QR scanning, photo capture and sharing.",
+  "description": "Cross-platform field operations suite handling QR capture, data audits, and photo evidence with offline-first sync.",
   "tags": ["Pro"],
   "url": "project.html?id=mobile-app",
   "pageData": {
     "paragraphs": [
-      "A suite of professional mobile applications developed for both Android and iOS platforms. These apps solve real-world problems with intuitive interfaces and robust functionality.",
-      "Features include efficient data list management with offline sync, QR code scanning with instant actions, and seamless photo capture with cloud sharing capabilities. Built with cross-platform frameworks for maximum reach and maintainability."
+      "<span class=\"fx-glow\">Offline-first</span> storage keeps inspections running without signal, then replays mutations through deterministic merge rules when connectivity returns.",
+      "Each workflow layers QR parsing, photo annotation, and audit logging on top of the same <span class=\"fx-bracket\">API CONTRACT</span>, so Android and iOS ship in parallel with minimal platform drift.",
+      "RETRO TAKEAWAY: <span class=\"fx-pulse\">FIELD ANALYTICS</span> PROVED WHICH FORMS NEEDED REDESIGN LONG BEFORE SUPPORT TICKETS ARRIVED."
     ],
     "images": [
       {

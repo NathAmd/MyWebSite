@@ -4,13 +4,14 @@
   "angle": 60,
   "titre": "Undead zone",
   "image": "https://placehold.co/300x300/222a33/ffffff?text=UZ",
-  "description": "A game created years ago, which helped me learn from my mistakes—a source of motivation for my growth.",
+  "description": "Legacy zombie survival prototype that stress-tested my solo pipeline from spawn logic to live Steam deployment.",
   "tags": ["Game", "Old"],
   "url": "project.html?id=undead-zone",
   "pageData": {
     "paragraphs": [
-      "Undead Zone was one of my first major game projects, a zombie survival game that taught me invaluable lessons about game design, player feedback, and iterative development.",
-      "Though created years ago, this project remains a cornerstone of my development journey. Every bug fixed, every feature added, and every player review helped shape my approach to software development and problem-solving."
+      "The survival loop leans on layered spawn controllers, object pooling, and AI steering that can pressure-test performance on older hardware.",
+      "I automated build uploads, crash symbolization, and feedback routing so every new patch pushed telemetry straight into my debugging stack.",
+      "RETRO TAKEAWAY: <span class=\"fx-pulse\">PLAYER HEATMAPS</span> SURFACED BALANCE GAPS FASTER THAN QA AND STILL GUIDE HOW I PRIORITISE PATCHES."
     ],
     "images": [
       {

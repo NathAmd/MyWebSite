@@ -83,6 +83,21 @@ body {
   margin-left: 0;
   margin-right: auto;
 }
+.project-section.callout {
+  border-color: rgba(255, 255, 255, 0.35);
+  background: linear-gradient(135deg, rgba(30, 46, 72, 0.65), rgba(12, 18, 28, 0.65));
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+  position: relative;
+}
+.project-section.callout::before {
+  content: "";
+  position: absolute;
+  inset: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  pointer-events: none;
+  border-radius: 0.35rem;
+  opacity: 0.6;
+}
 .project-paragraph {
   font-size: clamp(0.95rem, 1.5vw, 1.1rem);
   line-height: 1.7;
@@ -98,6 +113,22 @@ body {
   font-size: 1.5em;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.95);
+}
+.project-paragraph.project-retro {
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: center;
+  padding-left: 0;
+}
+.project-paragraph.project-retro::first-letter {
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+}
+.project-paragraph.project-retro span {
+  display: inline-block;
+  margin: 0 0.1em;
 }
 .image-container {
   display: none;
