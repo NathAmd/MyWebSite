@@ -1,27 +1,12 @@
 {
   "id": "ai-portrait",
-  "ring": 1.7,
-  "angle": 30,
   "titre": "AI Portrait",
-  "image": "https://placehold.co/300x300/2d1b3d/ffffff?text=AI+Portrait",
-  "description": "Interactive AI portrait that tracks gaze with YOLO, responds through a conversational Unity front end, and never breaks eye contact.",
-  "tags": ["AI", "Fun"],
   "url": "project.html?id=ai-portrait",
   "pageData": {
     "paragraphs": [
-      "<span class=\"fx-glow\">YOLO</span> vision models stream viewer coordinates at sub-25 ms latency, letting the portrait pivot pupils and eyelids with cinematic easing.",
-      "A <span class=\"fx-glow\">Unity</span> layer runs lip-sync, shader-driven lighting, and gRPC calls into the dialogue engine so answers feel grounded in the scene.",
-      "RETRO TAKEAWAY: <span class=\"fx-pulse\">MIC LATENCY</span> WAS THE ONLY THING BREAKING IMMERSION, SO I BUILT CUSTOM DEVICE PROFILING."
-    ],
-    "images": [
-      {
-        "url": "https://placehold.co/800x600/2d1b3d/ffffff?text=Eye+Tracking+Demo",
-        "placeholderText": "À modifier par IA"
-      },
-      {
-        "url": "https://placehold.co/800x600/3d2b4d/ffffff?text=Unity+Interface",
-        "placeholderText": "À modifier par IA"
-      }
+  "I combined several different technologies to create an engaging experience: a 3D character that tracks the viewer with its gaze and responds to a set of predefined topics.",
+  "Technical summary: I use <span class=\"fx-glow\">YOLO</span> for real-time face tracking and microphone activity detection. The microphone stream is sent to <span class=\"fx-glow\">ElevenLab</span> for speech processing; the returned audio is routed into <span class=\"fx-glow\">Unity</span>, which drives gaze direction and lip-sync animations based on YOLO tracking and the audio feed.",
+  "Personal note: Integrating multiple languages and tools (C#, Python, web APIs) can feel complex, but lightweight web-based communication layers keep the system manageable and unlock significant creative possibilities."
     ]
   }
 }

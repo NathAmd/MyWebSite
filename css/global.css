@@ -172,12 +172,12 @@ footer{
   content:"";
   position:absolute;
   inset:0;
-  border:1px solid rgba(136,233,255,0.35);
+  border:none; /* removed decorative border line per request */
   border-radius:inherit;
   opacity:0.55;
   pointer-events:none;
   mix-blend-mode:screen;
-  animation:fxGlowPulse 3.4s ease-in-out infinite;
+  animation:fxGlowPulse 1.4s ease-in-out infinite;
 }
 .fx-glow::after{
   content:"";
@@ -188,7 +188,7 @@ footer{
   width:90%;
   background:linear-gradient(90deg, transparent, rgba(180,255,255,0.7), transparent);
   transform:skewX(-18deg);
-  animation:fxGlowSweep 3s cubic-bezier(0.4,0,0.2,1) infinite;
+  /*animation:fxGlowSweep 3s cubic-bezier(0.4,0,0.2,1) infinite;*/
   pointer-events:none;
   mix-blend-mode:screen;
 }
