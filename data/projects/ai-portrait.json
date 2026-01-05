@@ -1,12 +1,22 @@
 {
   "id": "ai-portrait",
-  "titre": "AI Portrait",
-  "url": "project.html?id=ai-portrait",
+  "ring": 1,
+  "angle": 120,
+  "titre": "Interactive AI portrait",
+  "image": "https://placehold.co/300x300/0f2a1d/ffffff?text=AI+Portrait",
+  "description": "An experience where a 3D character locks on and reacts: computer vision, real-time, and stable behaviour.",
+  "tags": ["AI", "Unity", "YOLO", "Python", "Real-time", "Audio"],
+  "url": "",
   "pageData": {
-    "paragraphs": [
-  "I combined several different technologies to create an engaging experience: a 3D character that tracks the viewer with its gaze and responds to a set of predefined topics.",
-  "Technical summary: I use <span class=\"fx-glow\">YOLO</span> for real-time face tracking and microphone activity detection. The microphone stream is sent to <span class=\"fx-glow\">ElevenLab</span> for speech processing; the returned audio is routed into <span class=\"fx-glow\">Unity</span>, which drives gaze direction and lip-sync animations based on YOLO tracking and the audio feed.",
-  "Personal note: Integrating multiple languages and tools (C#, Python, web APIs) can feel complex, but lightweight web-based communication layers keep the system manageable and unlock significant creative possibilities."
+    "sections": [
+      {
+        "title": "The experience",
+        "content": "<p>The goal was to make the character feel present: it follows the viewer with believable reactions, without noticeable latency.</p><ul><li>Real-time face/presence tracking.</li><li>Reactions + audio (lip-sync when needed).</li><li>Stable behaviour, even in imperfect conditions.</li></ul>"
+      },
+      {
+        "title": "What I built",
+        "content": "<ul><li>Vision pipeline: <span class=\"fx-glow\">YOLO</span> to detect/lock, with guardrails (tracking loss, false positives).</li><li><span class=\"fx-glow\">Unity</span> for rendering, eye focus and animation, tuned to stay smooth.</li><li><span class=\"fx-glow\">Python</span> + integrations to orchestrate audio and keep sync clean.</li></ul>"
+      }
     ]
   }
 }

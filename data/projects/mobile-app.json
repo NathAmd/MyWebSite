@@ -2,25 +2,20 @@
   "id": "mobile-app",
   "ring": 1,
   "angle": 300,
-  "titre": "Android/iOS App",
-  "image": "https://placehold.co/300x300/25313b/ffffff?text=MOBILE",
-  "description": "Cross-platform field operations suite handling QR capture, data audits, and photo evidence with offline-first sync.",
-  "tags": ["Pro"],
-  "url": "project.html?id=mobile-app",
+  "titre": "Mobile audio guides (audio + QR)",
+  "image": "https://placehold.co/300x300/25313b/ffffff?text=AUDIOGUIDE",
+  "description": "On-site mobile audio guide apps: simple flow, QR navigation, and reliable audio playback.",
+  "tags": ["Professional", "Mobile", ".NET MAUI", "Blazor", "C#", "JavaScript", "Audio", "QR", "iOS/Android"],
+  "url": "",
   "pageData": {
-    "paragraphs": [
-      "<span class=\"fx-glow\">Offline-first</span> storage keeps inspections running without signal, then replays mutations through deterministic merge rules when connectivity returns.",
-      "Each workflow layers QR parsing, photo annotation, and audit logging on top of the same <span class=\"fx-bracket\">API CONTRACT</span>, so Android and iOS ship in parallel with minimal platform drift.",
-      "RETRO TAKEAWAY: <span class=\"fx-pulse\">FIELD ANALYTICS</span> PROVED WHICH FORMS NEEDED REDESIGN LONG BEFORE SUPPORT TICKETS ARRIVED."
-    ],
-    "images": [
+    "sections": [
       {
-        "url": "https://placehold.co/800x600/25313b/ffffff?text=Mobile+App+UI",
-        "placeholderText": "À modifier par IA"
+        "title": "Overview",
+        "content": "<p>A series of mobile apps designed for visitors, on smartphones, in real conditions (mixed devices, sometimes weak network, non-technical users).</p><ul><li>Clear flow: choose → open a point → listen.</li><li><span class=\"fx-glow\">QR</span> to reach the right content fast, without friction.</li><li>Content easy to update without rebuilding the app.</li></ul>"
       },
       {
-        "url": "https://placehold.co/800x600/2d3943/ffffff?text=App+Features",
-        "placeholderText": "À modifier par IA"
+        "title": "What I owned",
+        "content": "<ul><li>Hybrid architecture <span class=\"fx-glow\">.NET MAUI</span> + <span class=\"fx-glow\">Blazor</span>: fast UI iteration with a native mobile base.</li><li>Stabilised sensitive parts: <span class=\"fx-glow\">audio</span> (interruptions/resume) + camera/<span class=\"fx-glow\">QR</span> (permissions, clear error states).</li><li>Android/iOS delivery: production builds, packaging, and platform constraints.</li></ul>"
       }
     ]
   }

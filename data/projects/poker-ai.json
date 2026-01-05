@@ -2,16 +2,21 @@
   "id": "poker-ai",
   "ring": 1,
   "angle": 180,
-  "titre": "Poker AI",
+  "titre": "Poker assistant (vision + AI)",
   "image": "https://placehold.co/300x300/303e4b/ffffff?text=AI",
-  "description": "Hybrid vision-plus-language poker stack: YOLO reads the table state, Python crunches odds, GPT narrates the play.",
-  "tags": ["Fun", "AI"],
-  "url": "project.html?id=poker-ai",
+  "description": "An assistant that reads a table state through vision, then helps analyse a hand with a clear explanation.",
+  "tags": ["AI", "Vision", "YOLO", "Python", "Explainability"],
+  "url": "",
   "pageData": {
-    "paragraphs": [
-      "<span class=\"fx-glow\">YOLO</span> pipelines decode card suits and ranks at 60 FPS, feeding a feature store that synchronizes live tables with historical playlogs.",
-      "A <span class=\"fx-glow\">Python</span> decision core scans pot odds, Nash ranges, and bluff frequencies before handing intent prompts to GPT for natural language output.",
-      "RETRO TAKEAWAY: <span class=\"fx-pulse\">EXPLAINABLE DECISIONS</span> KEPT HUMAN PLAYERS ENGAGED LONGER THAN RAW WIN RATES."
+    "sections": [
+      {
+        "title": "The concept",
+        "content": "<p>The goal wasn’t to output a \"magic move\", but to make a decision readable: what vision understood, what gets evaluated, and why.</p><ul><li>Vision → table state (cards, positions, context).</li><li>Evaluation → calculations and rules.</li><li>Output → clear, decision-oriented explanation.</li></ul>"
+      },
+      {
+        "title": "What I built",
+        "content": "<ul><li><span class=\"fx-glow\">YOLO</span> to detect cards/state, with cleanup and consistency checks.</li><li><span class=\"fx-glow\">Python</span> for evaluation (odds, rules) and explanation assembly.</li><li>End-to-end chain (vision → compute → text) designed to be testable and iterable.</li></ul>"
+      }
     ],
     "images": [
       {

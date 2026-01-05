@@ -110,16 +110,69 @@ body.home {
   border-left-color: rgba(255, 255, 255, 0.5);
 }
 .home .menu-footer {
-  display: flex; gap: 1rem; padding: 1.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  padding: 1rem 1rem 1.1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.06), rgba(0, 0, 0, 0));
 }
-.home .menu-stat { flex: 1; display: flex; flex-direction: column; gap: 0.3rem; min-width: 0; }
+.home .menu-stat {
+  min-width: 0;
+  padding: 0.7rem 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 0.65rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.22);
+}
+.home .menu-stat:first-child {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 0.95rem;
+  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.05);
+}
+.home .menu-stat:nth-child(2):last-child {
+  grid-column: 1 / -1;
+}
 .home .stat-label {
-  font-size: 0.6rem; letter-spacing: 0.12em; color: rgba(255, 255, 255, 0.4);
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  color: rgba(255, 255, 255, 0.42);
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
 .home .stat-value {
-  font-size: 1.2rem; font-weight: 700; color: white; font-family: 'Courier New', monospace;
+  font-size: 1.05rem;
+  font-weight: 750;
+  color: rgba(255, 255, 255, 0.92);
+  font-family: var(--font-title);
+  letter-spacing: 0.04em;
+}
+.home .menu-stat:not(:first-child) .stat-value{
+  font-size: 0.82rem;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.home .menu-stat:first-child .stat-value {
+  font-size: 1.85rem;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
 }
 
 /* Burger — utilise les variables globales (reste carré et calé) */
@@ -144,9 +197,9 @@ body.home {
   width: calc(var(--burger-size) * 0.64);
   height: 3px; background: white; border-radius: 2px; display: block; transition: all 0.2s;
 }
-.home .menu-toggle.active span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+.home .menu-toggle.active span:nth-child(1) { transform: translateY(11px) rotate(45deg); }
 .home .menu-toggle.active span:nth-child(2) { opacity: 0; }
-.home .menu-toggle.active span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+.home .menu-toggle.active span:nth-child(3) { transform: translateY(-11px) rotate(-45deg); }
 
 /* Hero */
 .home .hud-center {

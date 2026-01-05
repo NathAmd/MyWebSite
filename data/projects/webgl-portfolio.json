@@ -1,0 +1,22 @@
+{
+  "id": "webgl-portfolio",
+  "ring": 1,
+  "angle": 180,
+  "titre": "WebGL portfolio (Three.js)",
+  "image": "https://placehold.co/300x300/1a2332/ffffff?text=WEBGL",
+  "description": "A portfolio built like a small product: 3D background, simple navigation, and one-screen project pages.",
+  "tags": ["Web", "Three.js", "WebGL", "JavaScript", "UX", "Perf"],
+  "url": "",
+  "pageData": {
+    "sections": [
+      {
+        "title": "The concept",
+        "content": "<p>The idea: a portfolio you can read fast, but with character. The content stays clear, and the 3D sets the mood without stealing the spotlight.</p><ul><li>Light menu + direct navigation to each project.</li><li>No-scroll project pages, keeping the right side free for the 3D scene.</li><li>Performance-focused: lightweight load, stable animation.</li></ul>"
+      },
+      {
+        "title": "What I built",
+        "content": "<ul><li><span class=\"fx-glow\">Three.js</span> / WebGL scene with a hologram look, designed to stay smooth.</li><li>Simple, maintainable UI: JSON-driven projects, dedicated project pages.</li><li>A printable <span class=\"fx-glow\">CV</span> (A4) for easy PDF export.</li></ul>"
+      }
+    ]
+  }
+}

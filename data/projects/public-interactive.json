@@ -1,0 +1,22 @@
+{
+  "id": "public-interactive",
+  "ring": 1,
+  "angle": 0,
+  "titre": "Public-facing interactive experiences",
+  "image": "https://placehold.co/300x300/0b1220/ffffff?text=INTERACTIF",
+  "description": "Interactive experiences that need to run all day: clear UI, solid logic, integrations, and on-site delivery.",
+  "tags": ["Professional", "Interactive", "Full-stack", "C#", "JavaScript", "HTML/CSS", "Shipping"],
+  "url": "",
+  "pageData": {
+    "sections": [
+      {
+        "title": "Overview",
+        "content": "<p>Public-facing interactive applications installed on site. The real challenge: an experience that feels smooth, is understood in a few seconds, and stays reliable over time.</p><ul><li>Short flows, readable UI, fast startup.</li><li>Robustness: guardrails, clean restart, clear feedback.</li><li>Content and scenarios that can evolve without rewriting everything.</li></ul>"
+      },
+      {
+        "title": "My role",
+        "content": "<ul><li>Owned end-to-end: design, development, integrations, and on-site delivery.</li><li>Field debugging: understand fast, fix properly, avoid regressions.</li><li>Stack as needed: <span class=\"fx-glow\">C#</span>, <span class=\"fx-glow\">HTML/CSS/JS</span>, and targeted integrations.</li></ul>"
+      }
+    ]
+  }
+}

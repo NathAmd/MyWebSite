@@ -14,10 +14,6 @@ S.orbitSpeed = 0.25; // radians per second
 // Camera constraints
 S.minCameraZ = 6; // don't allow camera z to go below this (closer to object)
 
-const setHTML = (id, html) => {
-  const el = document.getElementById(id);
-  if (el) el.innerHTML = html || '';
-};
 const hide = (id) => { const el = document.getElementById(id); if (el) el.style.display = 'none'; };
 const show = (id, display = '') => { const el = document.getElementById(id); if (el) el.style.display = display; };
 
@@ -31,10 +27,181 @@ const errorPage = (message) => {
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M19 12H5M12 19l-7-7 7-7"/>
         </svg>
-        <span>Back to Home</span>
+        <span>Back to portfolio</span>
       </a>
     </div>
   `;
+};
+
+const wrapIfNeeded = (html) => {
+  const s = (html || '').trim();
+  if (!s) return '';
+  if (/<\/(p|ul|ol|div|h\d|section|article)\b/i.test(s)) return s;
+  return `<p>${s}</p>`;
+};
+
+const setText = (id, text) => {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.textContent = text || '';
+};
+
+const fitProjectTitle = () => {
+  const el = document.getElementById('project-title');
+  if (!el) return;
+  el.style.fontSize = '';
+  if (el.clientWidth <= 0) return;
+
+  const minPx = 18;
+  let size = parseFloat(window.getComputedStyle(el).fontSize || '0');
+  if (!Number.isFinite(size) || size <= 0) return;
+
+  let safety = 48;
+  while (el.scrollWidth > el.clientWidth && size > minPx && safety-- > 0) {
+    size -= 1;
+    el.style.fontSize = `${size}px`;
+  }
+};
+
+const initSideMenu = async (currentId) => {
+  const sideMenu = document.getElementById('side-menu');
+  const menuToggle = document.getElementById('project-menu-toggle');
+  const projectsSubmenu = document.getElementById('projects-submenu');
+  const submenuItems = document.getElementById('submenu-items');
+  const projectCount = document.getElementById('project-count');
+
+  if (!sideMenu || !menuToggle) return;
+
+  const menuItems = sideMenu.querySelectorAll('.menu-item');
+  const projectsButton = sideMenu.querySelector('.menu-item[data-section="projects"]');
+
+  const openMenu = () => {
+    sideMenu.classList.add('open');
+    document.body.classList.add('menu-open');
+    menuToggle.setAttribute('aria-expanded', 'true');
+    menuToggle.classList.add('active');
+    if (projectsSubmenu) projectsSubmenu.classList.add('open');
+    if (projectsButton) projectsButton.classList.add('active');
+  };
+
+  const closeMenu = () => {
+    sideMenu.classList.remove('open');
+    document.body.classList.remove('menu-open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.classList.remove('active');
+  };
+
+  const toggleMenu = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const isOpen = sideMenu.classList.contains('open');
+    if (isOpen) closeMenu();
+    else openMenu();
+  };
+
+  menuToggle.addEventListener('click', toggleMenu);
+
+  document.addEventListener('click', (e) => {
+    if (!sideMenu.classList.contains('open')) return;
+    if (sideMenu.contains(e.target) || menuToggle.contains(e.target)) return;
+    closeMenu();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMenu();
+  });
+
+  menuItems.forEach((item) => {
+    item.addEventListener('click', () => {
+      const section = item.dataset.section;
+      if (section === 'projects') {
+        projectsSubmenu?.classList.toggle('open');
+        const open = Boolean(projectsSubmenu?.classList.contains('open'));
+        menuItems.forEach((mi) => { if (mi.dataset.section !== 'projects') mi.classList.remove('active'); });
+        item.classList.toggle('active', open);
+      } else {
+        menuItems.forEach((mi) => mi.classList.remove('active'));
+        item.classList.add('active');
+        projectsSubmenu?.classList.remove('open');
+      }
+    });
+  });
+
+  const cfg = await loadJSON('./data/projects.json');
+  if (!cfg || !Array.isArray(cfg.projects) || !cfg.projects.length || !submenuItems || !projectCount) {
+    menuToggle.style.display = 'none';
+    return;
+  }
+
+  const projects = await Promise.all(cfg.projects.map((id) => loadJSON(`./data/projects/${id}.json`)));
+  const list = projects.filter(Boolean).filter((p) => p.ring !== 0);
+
+  submenuItems.innerHTML = '';
+  list.forEach((p) => {
+    const href = p.url || `project.html?id=${encodeURIComponent(p.id)}`;
+    const isExternal = Boolean(p.url && /^https?:\/\//.test(p.url) && !p.url.startsWith(window.location.origin));
+
+    const a = document.createElement('a');
+    a.className = 'submenu-item';
+    a.href = href;
+    a.textContent = p.titre || p.id;
+    if (p.id === currentId) a.setAttribute('aria-current', 'page');
+    if (isExternal) {
+      a.setAttribute('target', '_blank');
+      a.setAttribute('rel', 'noopener');
+    }
+    submenuItems.appendChild(a);
+  });
+
+  projectCount.textContent = String(list.length);
+};
+
+const normalizeImage = (img) => {
+  if (!img) return null;
+  if (typeof img === 'string') return { url: img };
+  if (typeof img === 'object' && typeof img.url === 'string') return img;
+  return null;
+};
+
+const createProjectSection = ({ title, content, image, reverse, callout }, projectTitle, index) => {
+  const section = document.createElement('section');
+  section.className = `project-section${reverse ? ' reverse' : ''}${callout ? ' callout' : ''}`;
+  section.dataset.sectionIndex = String(index);
+
+  if (title) {
+    const h = document.createElement('h2');
+    h.className = 'project-section-title';
+    h.textContent = title;
+    section.appendChild(h);
+  }
+
+  const body = document.createElement('div');
+  body.className = 'project-text';
+  body.innerHTML = wrapIfNeeded(content);
+  section.appendChild(body);
+
+  const normalizedImage = normalizeImage(image);
+  if (normalizedImage && normalizedImage.url) {
+    const container = document.createElement('div');
+    container.className = 'image-container';
+
+    const img = document.createElement('img');
+    img.className = 'project-image';
+    img.src = normalizedImage.url;
+    img.alt = `${projectTitle} — capture ${index + 1}`;
+    container.appendChild(img);
+
+    if (normalizedImage.placeholderText) {
+      const o = document.createElement('div');
+      o.className = 'image-placeholder-overlay';
+      o.textContent = normalizedImage.placeholderText;
+      container.appendChild(o);
+    }
+
+    section.appendChild(container);
+  }
+
+  return section;
 };
 
 const buildCenter = () => {
@@ -109,56 +276,58 @@ const initThree = () => {
 };
 
 const populate = (project) => {
-  document.title = `${project.titre} - Styloxis`;
+  document.title = `${project.titre} — Nathanaël A.`;
+  setText('project-title', project.titre);
+  requestAnimationFrame(fitProjectTitle);
+
+  const description = typeof project.description === 'string' ? project.description.trim() : '';
+  if (description) {
+    setText('project-description', description);
+    show('project-description');
+  } else {
+    hide('project-description');
+  }
+
   const data = project.pageData;
   if (!data) {
-    errorPage('Project details not available.');
+    errorPage('Project details are unavailable.');
     return;
   }
-  const { paragraphs, images, customLink } = data;
+  const { sections, paragraphs, images, customLink } = data;
 
-  if (paragraphs && paragraphs.length >= 2) {
-    setHTML('paragraph-1', paragraphs[0]);
-    setHTML('paragraph-2', paragraphs[1]);
+  const root = document.getElementById('project-sections');
+  if (!root) {
+    errorPage('Structure de page invalide.');
+    return;
   }
+  root.innerHTML = '';
 
-  if (paragraphs && paragraphs[2]) {
-    setHTML('paragraph-retro', paragraphs[2]);
-    show('paragraph-retro-section');
+  const resolvedSections = [];
+  if (Array.isArray(sections) && sections.length) {
+    sections.forEach((s, idx) => {
+      if (!s) return;
+      resolvedSections.push({
+        title: typeof s.title === 'string' ? s.title : '',
+        content: typeof s.content === 'string' ? s.content : '',
+        image: s.image,
+        reverse: Boolean(s.reverse) || idx % 2 === 1,
+        callout: Boolean(s.callout)
+      });
+    });
+  } else if (Array.isArray(paragraphs) && paragraphs.length) {
+    if (paragraphs[0]) resolvedSections.push({ content: paragraphs[0], image: images && images[0], reverse: false, callout: false });
+    if (paragraphs[1]) resolvedSections.push({ content: paragraphs[1], image: images && images[1], reverse: true, callout: false });
+    if (paragraphs[2]) resolvedSections.push({ content: paragraphs[2], reverse: false, callout: true });
   } else {
-    hide('paragraph-retro-section');
+    errorPage('Contenu du projet indisponible.');
+    return;
   }
 
-  if (images && images.length >= 2) {
-    const i1c = document.getElementById('image-1-container');
-    const i2c = document.getElementById('image-2-container');
-    const i1 = document.getElementById('image-1');
-    const i2 = document.getElementById('image-2');
-
-    const img1 = typeof images[0] === 'string' ? { url: images[0] } : images[0];
-    const img2 = typeof images[1] === 'string' ? { url: images[1] } : images[1];
-
-    i1.src = img1.url;
-    i1.alt = `${project.titre} screenshot 1`;
-    if (img1.placeholderText) {
-      const o = document.createElement('div');
-      o.className = 'image-placeholder-overlay';
-      o.textContent = img1.placeholderText;
-      i1c.appendChild(o);
-    }
-
-    i2.src = img2.url;
-    i2.alt = `${project.titre} screenshot 2`;
-    if (img2.placeholderText) {
-      const o = document.createElement('div');
-      o.className = 'image-placeholder-overlay';
-      o.textContent = img2.placeholderText;
-      i2c.appendChild(o);
-    }
-  } else {
-    hide('image-1-container');
-    hide('image-2-container');
-  }
+  const isCompact = window.innerHeight < 640 || window.innerWidth < 420;
+  const maxSections = isCompact ? 1 : 2;
+  resolvedSections.slice(0, maxSections).forEach((s, idx) => {
+    root.appendChild(createProjectSection(s, project.titre, idx));
+  });
 
   if (customLink && customLink.url && customLink.text) {
     const section = document.getElementById('custom-link-section');
@@ -175,15 +344,18 @@ const populate = (project) => {
       a.removeAttribute('target');
       a.removeAttribute('rel');
     }
+  } else {
+    hide('custom-link-section');
   }
 };
 
 const init = async () => {
   initThree();
   buildCenter();
+  window.addEventListener('resize', () => requestAnimationFrame(fitProjectTitle));
   const id = getProjectId();
   if (!id) {
-    errorPage('No project ID specified.');
+    errorPage('No project specified.');
     return;
   }
   const project = await loadJSON(`./data/projects/${id}.json`);
@@ -192,6 +364,7 @@ const init = async () => {
     return;
   }
   populate(project);
+  await initSideMenu(id);
   animate();
 };
 

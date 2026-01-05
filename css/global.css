@@ -117,11 +117,11 @@ footer{
   border:1px solid var(--color-btn-border); border-radius:6px; cursor:pointer; z-index:9999;
   box-shadow:0 2px 8px rgba(0,0,0,.08); transition:all .2s;
 }
-.menu-toggle span{ width:calc(var(--burger-size) * 0.64); height:3px; background:#fff; border-radius:2px; display:block; transition:all .2s; }
+.menu-toggle span{ width:calc(var(--burger-size) * 0.64); height:3px; background:#fff; border-radius:2px; display:block; transition:all .2s; transform-origin:center; }
 .menu-toggle:hover{ background:rgba(255,255,255,.1); border-color:#fff; }
-.menu-toggle.active span:nth-child(1){ transform:translateY(9px) rotate(45deg); }
+.menu-toggle.active span:nth-child(1){ transform:translateY(11px) rotate(45deg); }
 .menu-toggle.active span:nth-child(2){ opacity:0; }
-.menu-toggle.active span:nth-child(3){ transform:translateY(-9px) rotate(-45deg); }
+.menu-toggle.active span:nth-child(3){ transform:translateY(-11px) rotate(-45deg); }
 
 /* Taille du burger contrôlée ici (sans override ailleurs) */
 :root{ --burger-size:44px; }

@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project - Styloxis</title>
+  <title>Project — Nathanaël A.</title>
   <link rel="stylesheet" href="./css/global.css">
+  <link rel="stylesheet" href="./css/main.css">
   <link rel="stylesheet" href="./css/project.css">
   <script type="importmap">
     {
@@ -18,36 +19,72 @@
 <body>
   <canvas id="webgl-canvas"></canvas>
 
+  <div class="home project-hud">
+    <div class="hud-overlay" aria-label="Menu">
+      <div class="top-logo-bar">
+        <div class="project-top-actions" aria-label="Quick navigation">
+          <button type="button" class="menu-toggle" id="project-menu-toggle" aria-label="Open menu" aria-controls="side-menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <a href="./index.html" class="back-btn" aria-label="Back to portfolio">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            <span>Back</span>
+          </a>
+        </div>
+        <span class="logo-text" itemprop="name">Nathanaël A.</span>
+      </div>
+      <div class="side-menu" id="side-menu">
+        <nav class="menu-nav">
+          <button class="menu-item active" data-section="projects" type="button">
+            <span class="menu-icon">▪</span>
+            <span class="menu-label">Projects</span>
+            <span class="menu-arrow">›</span>
+          </button>
+          <div class="submenu" id="projects-submenu">
+            <div class="submenu-items" id="submenu-items"></div>
+          </div>
+          <a class="menu-item" href="./cv.html">
+            <span class="menu-icon">▪</span>
+            <span class="menu-label">CV (printable)</span>
+          </a>
+          <a class="menu-item" href="mailto:nathanaelamd@gmail.com">
+            <span class="menu-icon">▪</span>
+            <span class="menu-label">Contact</span>
+          </a>
+        </nav>
+
+        <div class="menu-footer">
+          <div class="menu-stat">
+            <span class="stat-label">PROJECTS</span>
+            <span class="stat-value" id="project-count">0</span>
+          </div>
+          <div class="menu-stat">
+            <span class="stat-label">STACK</span>
+            <span class="stat-value">C# · JS · Unity · WebGL · Python · AI</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="project-container">
-    <a href="./index.html" class="back-btn" aria-label="Back to home">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M19 12H5M12 19l-7-7 7-7"/>
-      </svg>
-      <span>Back</span>
-    </a>
-
     <main class="project-content">
-      <section class="project-section">
-        <p id="paragraph-1" class="project-paragraph"></p>
-        <div id="image-1-container" class="image-container">
-          <img id="image-1" src="" alt="" class="project-image">
+      <div class="project-top" aria-label="Project">
+        <div class="project-top-row">
+          <h1 id="project-title" class="project-title"></h1>
         </div>
-      </section>
+        <p id="project-description" class="project-description"></p>
+      </div>
 
-      <section class="project-section reverse">
-        <p id="paragraph-2" class="project-paragraph"></p>
-        <div id="image-2-container" class="image-container">
-          <img id="image-2" src="" alt="" class="project-image">
-        </div>
-      </section>
-
-      <section id="paragraph-retro-section" class="project-section callout" style="display: none;">
-        <p id="paragraph-retro" class="project-paragraph project-retro"></p>
-      </section>
+      <div id="project-sections" aria-label="Project content"></div>
 
       <section id="custom-link-section" class="custom-link-section" style="display: none;">
         <a id="custom-link" href="#" target="_blank" rel="noopener" class="custom-btn">
-          <span id="custom-link-text">Visit</span>
+          <span id="custom-link-text">View</span>
         </a>
       </section>
     </main>

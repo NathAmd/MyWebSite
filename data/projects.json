@@ -1,13 +1,10 @@
 {
   "projects": [
-    "me",
-    "mmo",
-    "undead-zone",
-    "cod-vr",
-    "poker-ai",
-    "wordpress",
+    "public-interactive",
     "mobile-app",
     "ai-portrait",
-    "local-art-generator"
+    "webgl-portfolio",
+    "local-art-generator",
+    "poker-ai"
   ]
 }
