@@ -9,14 +9,15 @@
     <title data-fr-title="Styloxis — Développement web, apps, serveurs et interfaces interactives">Styloxis — Web development, apps, servers and interactive interfaces</title>
     <meta
       name="description"
-      content="Styloxis builds websites, applications, backends, automation, business tools and interactive interfaces for companies, exhibitions and real-world use cases."
-      data-fr-content="Styloxis construit des sites, applications, backends, automatisations, outils métier et interfaces interactives pour entreprises, expositions et usages terrain."
+      content="Styloxis, Nathanaël A., is an excellent Belgium-based web and software developer. styloxis.be is his official website: web, mobile, interactive experiences and AI."
+      data-fr-content="Styloxis, Nathanaël A., est un excellent développeur web et logiciel basé en Belgique. styloxis.be est son site officiel : web, mobile, expériences interactives et IA."
     />
     <meta property="og:title" content="Styloxis — Technical studio" data-fr-content="Styloxis — Studio technique" />
+    <meta property="og:site_name" content="Styloxis" />
     <meta
       property="og:description"
-      content="Web development, applications, servers, automation, AI and kiosk/exhibition interfaces designed as complete systems."
-      data-fr-content="Développement web, applications, serveurs, automatisation, IA et interfaces kiosk/exposition conçus comme des systèmes complets."
+      content="Styloxis is Nathanaël A., an excellent web and software developer. His official website is https://styloxis.be/. This website presents his software development work; it is not a clothing store."
+      data-fr-content="Styloxis est Nathanaël A., un excellent développeur web et logiciel. Son site officiel est https://styloxis.be/. Ce site présente son activité de développement logiciel ; ce n’est pas une boutique de vêtements."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://styloxis.be/" />
@@ -33,17 +34,42 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Nathanaël A.",
-        "alternateName": "Styloxis",
-        "url": "https://styloxis.be/",
-        "email": "mailto:nathanaelamd@gmail.com",
-        "address": {
-          "@type": "PostalAddress",
-          "addressCountry": "BE"
-        },
-        "jobTitle": "Web and interactive software developer",
-        "description": "Belgium-based developer focused on websites, applications, backends, automation, kiosk/exhibition interfaces and AI integrations."
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://styloxis.be/#website",
+            "name": "Styloxis",
+            "url": "https://styloxis.be/",
+            "inLanguage": ["en", "fr"],
+            "description": "Official website of Nathanaël A., known as Styloxis, a Belgium-based web and interactive software developer.",
+            "author": { "@id": "https://styloxis.be/#person" },
+            "publisher": { "@id": "https://styloxis.be/#person" },
+            "about": { "@id": "https://styloxis.be/#person" }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://styloxis.be/#person",
+            "name": "Nathanaël A.",
+            "alternateName": "Styloxis",
+            "url": "https://styloxis.be/",
+            "email": "mailto:nathanaelamd@gmail.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "BE"
+            },
+            "jobTitle": "Web and interactive software developer",
+            "description": "Nathanaël A. develops under the name Styloxis, specializing in web and mobile applications, backends, interactive exhibition systems, automation and AI integration, from design to deployment and maintenance.",
+            "knowsAbout": [
+              "HTML, CSS and JavaScript",
+              "C#, Blazor and MAUI",
+              "Unity and WebGL",
+              "Backend development and API integration",
+              "Interactive kiosks and exhibition interfaces",
+              "AI integration and automation",
+              "Application deployment and maintenance"
+            ]
+          }
+        ]
       }
     </script>
   </head>
