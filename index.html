@@ -1,97 +1,276 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nathanaël A. — Full-stack software developer</title>
-  <meta name="description" content="Nathanaël A. portfolio: interactive applications, web, Unity, Three.js/WebGL and applied AI integrations (SDXL, YOLO).">
-  <meta name="keywords" content="portfolio, full-stack developer, C#, JavaScript, HTML, CSS, Unity, Three.js, WebGL, AI, SDXL, YOLO, Belgium">
-  <meta name="author" content="Nathanaël A.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://styloxis.be/">
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="./css/global.css">
-  <link rel="stylesheet" href="./css/main.css">
-  <!-- Structured Data JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Nathanaël A.",
-    "url": "https://styloxis.be/",
-    "image": "https://styloxis.be/assets/og-image.jpg",
-    "jobTitle": "Full-stack software developer",
-    "description": "Portfolio: interactive applications, web, Unity, Three.js/WebGL and applied AI integrations (SDXL, YOLO)."
-  }
-  </script>
-  <script type="importmap">
-    {
-      "imports": {
-        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
-        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Nathanaël A." />
+    <meta name="theme-color" content="#050607" />
+    <title data-fr-title="Styloxis — Développement web, apps, serveurs et interfaces interactives">Styloxis — Web development, apps, servers and interactive interfaces</title>
+    <meta
+      name="description"
+      content="Styloxis builds websites, applications, backends, automation, business tools and interactive interfaces for companies, exhibitions and real-world use cases."
+      data-fr-content="Styloxis construit des sites, applications, backends, automatisations, outils métier et interfaces interactives pour entreprises, expositions et usages terrain."
+    />
+    <meta property="og:title" content="Styloxis — Technical studio" data-fr-content="Styloxis — Studio technique" />
+    <meta
+      property="og:description"
+      content="Web development, applications, servers, automation, AI and kiosk/exhibition interfaces designed as complete systems."
+      data-fr-content="Développement web, applications, serveurs, automatisation, IA et interfaces kiosk/exposition conçus comme des systèmes complets."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://styloxis.be/" />
+    <link rel="canonical" href="https://styloxis.be/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&amp;family=IBM+Plex+Sans+Condensed:wght@500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./css/global.css?v=20260529-12" />
+    <link rel="stylesheet" href="./css/main.css?v=20260529-12" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Nathanaël A.",
+        "alternateName": "Styloxis",
+        "url": "https://styloxis.be/",
+        "email": "mailto:nathanaelamd@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "BE"
+        },
+        "jobTitle": "Web and interactive software developer",
+        "description": "Belgium-based developer focused on websites, applications, backends, automation, kiosk/exhibition interfaces and AI integrations."
       }
-    }
-  </script>
-</head>
-<body class="home">
-  <canvas id="webgl-canvas" aria-label="3D background animation" role="img"></canvas>
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main" data-fr="Aller au contenu">Skip to content</a>
 
-  <div class="hud-overlay">
-    <div class="top-logo-bar">
-  <span class="logo-text" itemprop="name">Nathanaël A.</span>
-    </div>
+    <header class="site-header" data-header>
+      <a class="brand" href="#top" aria-label="Styloxis home" data-fr-label="Accueil Styloxis">
+        <span class="brand-mark" aria-hidden="true">SX</span>
+        <span>Styloxis</span>
+      </a>
 
-  <div class="side-menu" id="side-menu">
-      <nav class="menu-nav">
-        <button class="menu-item active" data-section="projects">
-          <span class="menu-icon">▪</span>
-          <span class="menu-label">Projects</span>
-          <span class="menu-arrow">›</span>
-        </button>
-        <div class="submenu" id="projects-submenu">
-          <div class="submenu-items" id="submenu-items">
+      <nav class="site-nav" aria-label="Primary navigation" data-fr-label="Navigation principale">
+        <a href="#build" data-fr="Compétences">Skills</a>
+        <a href="#approach" data-fr="Approche">Approach</a>
+        <a href="#systems" data-fr="Technique">Technical</a>
+        <a href="./cv.html">CV</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="language-switch" aria-label="Language">
+        <button type="button" data-lang-option="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang-option="fr" aria-pressed="false">FR</button>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero section" id="top" aria-labelledby="hero-title">
+        <canvas class="terrain-canvas" id="terrain-canvas" width="1600" height="900" aria-hidden="true"></canvas>
+        <div class="hero-ruler" aria-hidden="true">WEB / APP / BACKEND / KIOSK / AUTOMATION / AI</div>
+        <div class="section-inner hero-layout">
+          <div class="hero-copy reveal">
+            <p class="eyebrow" data-fr="Styloxis / studio technique">Styloxis / technical studio</p>
+            <h1 id="hero-title" data-fr="Sites, apps et outils interactifs conçus comme des systèmes complets.">Websites, apps and interactive tools designed as complete systems.</h1>
+            <p class="hero-subtitle" data-fr="Je construis des produits numériques propres, rapides et utilisables : sites web, applications, backends, automatisations, intégrations IA et interfaces kiosk ou exposition.">
+              I build clean, fast and usable digital products: websites, applications, backends, automation, AI integrations and kiosk or exhibition interfaces.
+            </p>
+            <div class="hero-actions" aria-label="Primary actions" data-fr-label="Actions principales">
+              <a class="button primary" href="#build" data-fr="Voir les compétences">View skills</a>
+              <a class="button secondary" href="#contact" data-fr="Discuter d’un projet">Discuss a project</a>
+            </div>
           </div>
         </div>
-        <a class="menu-item" href="./cv.html">
-          <span class="menu-icon">▪</span>
-          <span class="menu-label">CV (printable)</span>
-        </a>
-        <a class="menu-item" href="mailto:nathanaelamd@gmail.com">
-          <span class="menu-icon">▪</span>
-          <span class="menu-label">Contact</span>
-        </a>
-      </nav>
-      
-      <div class="menu-footer">
-        <div class="menu-stat">
-          <span class="stat-label">PROJECTS</span>
-          <span class="stat-value" id="project-count">0</span>
+      </section>
+
+      <section class="section build-section" id="build" aria-labelledby="build-title">
+        <div class="section-inner">
+          <div class="section-intro reveal">
+            <p class="section-kicker" data-fr="01 / Compétences">01 / Skills</p>
+            <h2 id="build-title" data-fr="Compétences en développement logiciel">Software development skills</h2>
+            <p data-fr="Du développement d’interfaces à l’intégration de services, mes compétences couvrent la conception, la mise en production et la maintenance d’applications web, mobiles et interactives.">From interface development to service integration, my skills cover the design, deployment and maintenance of web, mobile and interactive applications.</p>
+          </div>
+
+          <div class="module-grid" aria-label="Core skills" data-fr-label="Compétences principales">
+            <article class="module-card reveal">
+              <span>01</span>
+              <h3 data-fr="Développement front-end">Front-end development</h3>
+              <p data-fr="Sites vitrines, pages commerciales, interfaces responsives, SEO technique, performance, formulaires et intégration propre avec vos outils.">Showcase websites, commercial pages, responsive interfaces, technical SEO, performance, forms and clean integration with your tools.</p>
+            </article>
+            <article class="module-card reveal">
+              <span>02</span>
+              <h3 data-fr="Applications métier">Business applications</h3>
+              <p data-fr="Tableaux de suivi, outils internes, espaces clients, formulaires avancés, gestion de données, rôles utilisateurs et logique métier.">Tracking dashboards, internal tools, client spaces, advanced forms, data management, user roles and business logic.</p>
+            </article>
+            <article class="module-card reveal">
+              <span>03</span>
+              <h3 data-fr="Développement mobile">Mobile development</h3>
+              <p data-fr="Interfaces mobiles, applications hybrides, parcours QR, contenus audio ou visuels, synchronisation et intégration API selon le besoin.">Mobile interfaces, hybrid applications, QR flows, audio or visual content, synchronization and API integration when needed.</p>
+            </article>
+            <article class="module-card reveal">
+              <span>04</span>
+              <h3 data-fr="Backend &amp; intégration API">Backend &amp; API integration</h3>
+              <p data-fr="APIs, bases de données, authentification, paiements Stripe, emails, logs, sauvegardes, hébergement et outils d’administration.">APIs, databases, authentication, Stripe payments, emails, logs, backups, hosting and administration tools.</p>
+            </article>
+            <article class="module-card reveal">
+              <span>05</span>
+              <h3 data-fr="Interfaces interactives &amp; bornes">Interactive interfaces &amp; kiosks</h3>
+              <p data-fr="Kiosques, écrans tactiles, expositions, interfaces locales ou offline, installations terrain et systèmes multi-apps.">Kiosks, touchscreens, exhibitions, local or offline interfaces, field installations and multi-app systems.</p>
+            </article>
+            <article class="module-card reveal">
+              <span>06</span>
+              <h3 data-fr="IA &amp; automatisation">AI &amp; automation</h3>
+              <p data-fr="Intégration LLM, scripts, workflows, génération assistée, extraction de données, logique de contrôle et connexion à des APIs.">LLM integration, scripts, workflows, assisted generation, data extraction, control logic and API connections.</p>
+            </article>
+          </div>
         </div>
-        <div class="menu-stat">
-          <span class="stat-label">STACK</span>
-          <span class="stat-value">C# · JS · Unity · WebGL · Python · AI</span>
+      </section>
+
+      <section class="section approach-section" id="approach" aria-labelledby="approach-title">
+        <div class="section-inner section-split">
+          <div class="section-intro reveal">
+            <p class="section-kicker">02 / Approach</p>
+            <h2 id="approach-title" data-fr="Construire une base propre avant l’effet visuel.">Build the foundation before the visual effect.</h2>
+            <p data-fr="Un bon site n’est pas seulement une belle page. Il doit charger vite, guider l’utilisateur, gérer les erreurs, rester maintenable et servir un objectif clair.">
+              A good site is not just a good-looking page. It has to load fast, guide the user, handle errors, stay maintainable and serve a clear goal.
+            </p>
+          </div>
+          <ol class="directive-list" aria-label="Work principles" data-fr-label="Principes de travail">
+            <li class="reveal"><span>DIR 01</span><p data-fr="Comprendre le besoin réel avant de choisir l’interface ou la technologie.">Understand the real need before choosing the interface or the technology.</p></li>
+            <li class="reveal"><span>DIR 02</span><p data-fr="Prévoir les cas limites : erreurs de saisie, connexions lentes, données manquantes, usages mobiles.">Plan for edge cases: input errors, slow connections, missing data and mobile usage.</p></li>
+            <li class="reveal"><span>DIR 03</span><p data-fr="Garder une structure de code lisible pour pouvoir corriger, étendre et maintenir le projet.">Keep the code structure readable so the project can be fixed, extended and maintained.</p></li>
+            <li class="reveal"><span>DIR 04</span><p data-fr="Tester le rendu sur les écrans réels, les navigateurs ciblés et les conditions d’usage prévues.">Test the result on real screens, target browsers and expected usage conditions.</p></li>
+            <li class="reveal"><span>DIR 05</span><p data-fr="Retirer les effets qui compliquent le produit sans améliorer la compréhension ou l’usage.">Remove effects that complicate the product without improving understanding or use.</p></li>
+          </ol>
         </div>
+      </section>
+
+      <section class="section systems-section" id="systems" aria-labelledby="systems-title">
+        <div class="section-inner">
+          <div class="section-intro reveal">
+            <p class="section-kicker">03 / Systems</p>
+            <h2 id="systems-title" data-fr="Capacités techniques par rôle">Technical capabilities by role</h2>
+            <p data-fr="Les technologies sont utiles quand elles ont une place claire dans le produit. Je les organise par responsabilité plutôt que par collection de logos.">Technologies are useful when they have a clear place in the product. I organize them by responsibility instead of treating them as a logo collection.</p>
+          </div>
+
+          <div class="systems-table reveal" aria-label="Technical capabilities" data-fr-label="Capacités techniques">
+            <article>
+              <span>INTERFACE</span>
+              <p data-fr="HTML, CSS, JavaScript, UI responsive, animations légères, accessibilité, performance, formulaires.">HTML, CSS, JavaScript, responsive UI, light animations, accessibility, performance and forms.</p>
+            </article>
+            <article>
+              <span>APPLICATION</span>
+              <p data-fr="Blazor, MAUI, apps hybrides, Unity, WebGL, interfaces tactiles, logique métier, états et navigation.">Blazor, MAUI, hybrid apps, Unity, WebGL, touch interfaces, business logic, states and navigation.</p>
+            </article>
+            <article>
+              <span>BACKEND</span>
+              <p data-fr="APIs, bases de données, authentification, paiements Stripe, emails, sauvegardes, logs et sécurité pratique.">APIs, databases, authentication, Stripe payments, emails, backups, logs and practical security.</p>
+            </article>
+            <article>
+              <span>DEPLOY</span>
+              <p data-fr="GitHub Pages, domaines, hébergement, serveurs, environnements locaux, scripts de lancement et monitoring simple.">GitHub Pages, domains, hosting, servers, local environments, launch scripts and simple monitoring.</p>
+            </article>
+            <article>
+              <span>AI &amp; AUTOMATION</span>
+              <p data-fr="Intégration IA, scripts, outils internes, workflows, génération assistée, APIs et communication socket si nécessaire.">AI integration, scripts, internal tools, workflows, assisted generation, APIs and socket communication when needed.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section cases-section" id="cases" aria-labelledby="cases-title">
+        <div class="section-inner">
+          <div class="section-intro reveal">
+            <p class="section-kicker" data-fr="04 / Savoir-faire">04 / Engineering skills</p>
+            <h2 id="cases-title" data-fr="De l’analyse à la mise en production">From requirements to production</h2>
+            <p data-fr="Des compétences transversales pour structurer le développement, vérifier le fonctionnement et assurer le suivi des applications.">Engineering skills to structure development, verify application behavior and support applications over time.</p>
+          </div>
+
+          <div class="case-ledger">
+            <article class="case-row reveal">
+              <div><span>01</span><h3 data-fr="Analyse des besoins">Requirements analysis</h3></div>
+              <p data-fr-html="&lt;strong&gt;Cadrage&lt;/strong&gt; Identifier les utilisateurs, les parcours et les contraintes techniques avant de choisir la solution."><strong>Scoping</strong> Identify users, workflows and technical constraints before choosing a solution.</p>
+              <p data-fr-html="&lt;strong&gt;Spécification&lt;/strong&gt; Définir les fonctionnalités, les données nécessaires et les cas limites."><strong>Specification</strong> Define features, required data and edge cases.</p>
+              <p data-fr-html="&lt;strong&gt;Priorisation&lt;/strong&gt; Organiser une première version utile et les évolutions à prévoir."><strong>Prioritization</strong> Plan a useful first release and subsequent improvements.</p>
+            </article>
+            <article class="case-row reveal">
+              <div><span>02</span><h3 data-fr="Architecture applicative">Application architecture</h3></div>
+              <p data-fr-html="&lt;strong&gt;Structure&lt;/strong&gt; Séparer interface, logique métier et accès aux données pour faciliter les évolutions."><strong>Structure</strong> Separate interfaces, business logic and data access to support future changes.</p>
+              <p data-fr-html="&lt;strong&gt;Intégration&lt;/strong&gt; Connecter les APIs, les services et les applications avec une gestion explicite des erreurs."><strong>Integration</strong> Connect APIs, services and applications with explicit error handling.</p>
+              <p data-fr-html="&lt;strong&gt;Maintenance&lt;/strong&gt; Conserver un code lisible et des responsabilités clairement définies."><strong>Maintenance</strong> Keep code readable and responsibilities clearly defined.</p>
+            </article>
+            <article class="case-row reveal">
+              <div><span>03</span><h3 data-fr="Qualité et fiabilité">Quality and reliability</h3></div>
+              <p data-fr-html="&lt;strong&gt;Validation&lt;/strong&gt; Vérifier les parcours sur mobile, navigateur et écran tactile selon l’usage prévu."><strong>Validation</strong> Check workflows on mobile devices, browsers and touchscreens for their intended use.</p>
+              <p data-fr-html="&lt;strong&gt;Robustesse&lt;/strong&gt; Prévoir les erreurs de saisie, les données manquantes et les connexions instables."><strong>Robustness</strong> Account for input errors, missing data and unstable connections.</p>
+              <p data-fr-html="&lt;strong&gt;Diagnostic&lt;/strong&gt; Utiliser les logs et reproduire les incidents pour corriger leur cause."><strong>Diagnostics</strong> Use logs and reproduce incidents to address their cause.</p>
+            </article>
+            <article class="case-row reveal">
+              <div><span>04</span><h3 data-fr="Déploiement et support">Deployment and support</h3></div>
+              <p data-fr-html="&lt;strong&gt;Mise en service&lt;/strong&gt; Configurer l’hébergement, les domaines et les environnements locaux ou sur borne."><strong>Release</strong> Configure hosting, domains and local or kiosk environments.</p>
+              <p data-fr-html="&lt;strong&gt;Exploitation&lt;/strong&gt; Préparer les scripts de lancement, les sauvegardes et les procédures de mise à jour."><strong>Operations</strong> Prepare launch scripts, backups and update procedures.</p>
+              <p data-fr-html="&lt;strong&gt;Suivi&lt;/strong&gt; Diagnostiquer les problèmes en production et maintenir les applications dans la durée."><strong>Support</strong> Diagnose production issues and maintain applications over time.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section proof-section" aria-labelledby="proof-title">
+        <div class="section-inner section-split reverse">
+          <div class="section-intro reveal">
+            <p class="section-kicker">05 / Reliability</p>
+            <h2 id="proof-title" data-fr="Pourquoi c’est solide">Why it is solid</h2>
+            <p data-fr="Un projet digital ne s’arrête pas à son apparence. Il faut penser aux données, au support, aux erreurs, au déploiement, aux utilisateurs et à la maintenance.">
+              A digital project does not stop at its appearance. Data, support, errors, deployment, users and maintenance all need to be considered.
+            </p>
+          </div>
+          <div class="proof-grid reveal" aria-label="Reliability points" data-fr-label="Points de fiabilité">
+            <p><span>01</span><span data-fr="Gestion du design, du code, du backend et du déploiement dans une même logique.">Design, code, backend and deployment handled within one coherent logic.</span></p>
+            <p><span>02</span><span data-fr="Interfaces pensées pour des personnes qui doivent comprendre vite, pas pour impressionner seulement.">Interfaces designed for people who need to understand quickly, not just be impressed.</span></p>
+            <p><span>03</span><span data-fr="Expérience avec web, app, serveur local, bornes tactiles, Unity, IA et systèmes d’exposition.">Experience across web, apps, local servers, touch kiosks, Unity, AI and exhibition systems.</span></p>
+            <p><span>04</span><span data-fr="Attention portée aux performances, aux erreurs, aux logs, à la sécurité pratique et à la maintenance.">Attention to performance, errors, logs, practical security and maintenance.</span></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section cv-preview" aria-labelledby="cv-preview-title">
+        <div class="section-inner final-strip reveal">
+          <div>
+            <p class="section-kicker">06 / Background</p>
+            <h2 id="cv-preview-title" data-fr="Parcours et stack détaillés">Detailed background and stack</h2>
+            <p data-fr="Le CV présente l’expérience, les responsabilités et les technologies utilisées sur des produits interactifs et techniques.">The CV lists experience, responsibilities and technologies used on interactive and technical products.</p>
+          </div>
+          <a class="button secondary" href="./cv.html" data-fr="Voir le CV">View CV</a>
+        </div>
+      </section>
+
+      <section class="section contact-section" id="contact" aria-labelledby="contact-title">
+        <div class="section-inner contact-panel reveal">
+          <p class="section-kicker">Contact</p>
+          <h2 id="contact-title" data-fr="Vous avez un site, une app ou un outil à construire ?">Do you have a site, app or tool to build?</h2>
+          <p data-fr="Projet précis, idée floue ou outil à améliorer : envoyez le contexte, je vous réponds avec une approche claire.">Precise project, rough idea or tool to improve: send the context and I will answer with a clear approach.</p>
+          <div class="contact-actions">
+            <a class="button primary" href="mailto:nathanaelamd@gmail.com" data-fr="Envoyer un email">Send an email</a>
+            <a class="contact-email" href="mailto:nathanaelamd@gmail.com">nathanaelamd@gmail.com</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <p><strong>Styloxis</strong> · <span data-fr="Belgique">Belgium</span></p>
+        <p>Web · App · Backend · Kiosk · <span data-fr="IA">AI</span></p>
+        <p><a href="mailto:nathanaelamd@gmail.com">Contact</a> · © 2026 Styloxis</p>
       </div>
-    </div>
+    </footer>
 
-    <button class="menu-toggle" id="menu-toggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
-    <div class="hud-center" itemscope itemtype="https://schema.org/Person">
-      <h1 class="main-title">
-        <span class="title-line">FULL-STACK</span>
-        <span class="title-line highlight">DEVELOPER</span>
-      </h1>
-      <p class="main-subtitle" itemprop="description"><span class="fx-glow">I build interactive experiences (web, Unity, AI)</span></p>
-    </div>
-
-  <div class="scanlines"></div>
-  </div>
-
-  <script type="module" src="./script/main.js"></script>
-</body>
+    <script src="./script/main.js?v=20260529-13" defer></script>
+  </body>
 </html>

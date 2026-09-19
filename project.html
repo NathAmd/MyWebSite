@@ -1,97 +1,144 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project — Nathanaël A.</title>
-  <link rel="stylesheet" href="./css/global.css">
-  <link rel="stylesheet" href="./css/main.css">
-  <link rel="stylesheet" href="./css/project.css">
-  <script type="importmap">
-    {
-      "imports": {
-        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
-        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
-      }
-    }
-  </script>
-</head>
-<body>
-  <canvas id="webgl-canvas"></canvas>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, follow" />
+    <meta name="author" content="Nathanaël A." />
+    <meta name="theme-color" content="#050607" />
+    <title data-fr-title="Compétences techniques — Styloxis">Technical Skills — Styloxis</title>
+    <meta
+      name="description"
+      content="Styloxis technical skills: front-end development, mobile applications, AI integration, Unity and deployment."
+      data-fr-content="Compétences techniques Styloxis : développement front-end, applications mobiles, intégration IA, Unity et déploiement."
+    />
+    <link rel="canonical" href="https://styloxis.be/" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&amp;family=IBM+Plex+Sans+Condensed:wght@500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/global.css?v=20260529-12" />
+    <link rel="stylesheet" href="./css/main.css?v=20260529-12" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main" data-fr="Aller au contenu">Skip to content</a>
 
-  <div class="home project-hud">
-    <div class="hud-overlay" aria-label="Menu">
-      <div class="top-logo-bar">
-        <div class="project-top-actions" aria-label="Quick navigation">
-          <button type="button" class="menu-toggle" id="project-menu-toggle" aria-label="Open menu" aria-controls="side-menu" aria-expanded="false">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-          <a href="./index.html" class="back-btn" aria-label="Back to portfolio">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M19 12H5M12 19l-7-7 7-7"/>
-            </svg>
-            <span>Back</span>
-          </a>
-        </div>
-        <span class="logo-text" itemprop="name">Nathanaël A.</span>
+    <header class="site-header" data-header>
+      <a class="brand" href="./index.html" aria-label="Styloxis home" data-fr-label="Accueil Styloxis">
+        <span class="brand-mark" aria-hidden="true">SX</span>
+        <span>Styloxis</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation" data-fr-label="Navigation principale">
+        <a href="./index.html#build" data-fr="Compétences">Skills</a>
+        <a href="./index.html#approach" data-fr="Approche">Approach</a>
+        <a href="./index.html#systems" data-fr="Technique">Technical</a>
+        <a href="./cv.html">CV</a>
+        <a href="./index.html#contact">Contact</a>
+      </nav>
+      <div class="language-switch" aria-label="Language">
+        <button type="button" data-lang-option="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang-option="fr" aria-pressed="false">FR</button>
       </div>
-      <div class="side-menu" id="side-menu">
-        <nav class="menu-nav">
-          <button class="menu-item active" data-section="projects" type="button">
-            <span class="menu-icon">▪</span>
-            <span class="menu-label">Projects</span>
-            <span class="menu-arrow">›</span>
-          </button>
-          <div class="submenu" id="projects-submenu">
-            <div class="submenu-items" id="submenu-items"></div>
-          </div>
-          <a class="menu-item" href="./cv.html">
-            <span class="menu-icon">▪</span>
-            <span class="menu-label">CV (printable)</span>
-          </a>
-          <a class="menu-item" href="mailto:nathanaelamd@gmail.com">
-            <span class="menu-icon">▪</span>
-            <span class="menu-label">Contact</span>
-          </a>
-        </nav>
+    </header>
 
-        <div class="menu-footer">
-          <div class="menu-stat">
-            <span class="stat-label">PROJECTS</span>
-            <span class="stat-value" id="project-count">0</span>
+    <main id="main">
+      <section class="section work-section" aria-labelledby="work-title">
+        <div class="section-inner">
+          <div class="section-heading reveal">
+            <p class="section-kicker" data-fr="Compétences techniques">Technical skills</p>
+            <h1 class="hero-title" id="work-title" data-fr="Développement, intégration et déploiement">Development, integration and deployment</h1>
+            <p data-fr="Mes compétences en développement web, mobile et interactif, avec les pratiques et les technologies associées à chaque domaine.">My web, mobile and interactive development skills, with the practices and technologies used in each area.</p>
           </div>
-          <div class="menu-stat">
-            <span class="stat-label">STACK</span>
-            <span class="stat-value">C# · JS · Unity · WebGL · Python · AI</span>
+
+          <div class="work-list">
+            <article class="work-card reveal">
+              <div>
+                <p class="work-type" data-fr="01 / Web">01 / Web</p>
+                <h2 data-fr="Développement front-end">Front-end development</h2>
+              </div>
+              <dl>
+                <div><dt data-fr="Compétence">Skill</dt><dd data-fr="Concevoir des interfaces responsives, une navigation claire et des contenus multilingues pour le web et les bornes tactiles.">Design responsive interfaces, clear navigation and multilingual content for the web and touch kiosks.</dd></div>
+                <div><dt data-fr="Mise en pratique">Practice</dt><dd data-fr="Structuration HTML, mise en page CSS, interactions JavaScript, performance et déploiement de sites statiques.">HTML structure, CSS layouts, JavaScript interactions, performance and static website deployment.</dd></div>
+                <div><dt>Technologies</dt><dd>HTML, CSS, JavaScript, GitHub Pages</dd></div>
+              </dl>
+            </article>
+
+            <article class="work-card reveal">
+              <div>
+                <p class="work-type" data-fr="02 / Mobile">02 / Mobile</p>
+                <h2 data-fr="Développement mobile multiplateforme">Cross-platform mobile development</h2>
+              </div>
+              <dl>
+                <div><dt data-fr="Compétence">Skill</dt><dd data-fr="Construire des applications Android et iOS avec des parcours QR et des contenus audio ou visuels.">Build Android and iOS applications with QR workflows and audio or visual content.</dd></div>
+                <div><dt data-fr="Mise en pratique">Practice</dt><dd data-fr="Organisation des écrans, navigation, synchronisation des données et intégration API avec Blazor MAUI.">Screen organization, navigation, data synchronization and API integration with Blazor MAUI.</dd></div>
+                <div><dt>Technologies</dt><dd>C#, Blazor MAUI, HTML, CSS, JavaScript</dd></div>
+              </dl>
+            </article>
+
+            <article class="work-card reveal">
+              <div>
+                <p class="work-type" data-fr="03 / IA et automatisation">03 / AI and automation</p>
+                <h2 data-fr="Intégration IA et traitement visuel">AI integration and visual processing</h2>
+              </div>
+              <dl>
+                <div><dt data-fr="Compétence">Skill</dt><dd data-fr="Intégrer la génération d’images, la vision par ordinateur et la détection dans des applications interactives.">Integrate image generation, computer vision and detection into interactive applications.</dd></div>
+                <div><dt data-fr="Mise en pratique">Practice</dt><dd data-fr="Préparation des entrées, orchestration des traitements, contrôle des sorties et connexion aux APIs.">Input preparation, processing workflows, output validation and API connections.</dd></div>
+                <div><dt>Technologies</dt><dd>Python, YOLO, SDXL, APIs</dd></div>
+              </dl>
+            </article>
+
+            <article class="work-card reveal">
+              <div>
+                <p class="work-type" data-fr="04 / Temps réel">04 / Real-time</p>
+                <h2 data-fr="Développement Unity et interfaces interactives">Unity development and interactive interfaces</h2>
+              </div>
+              <dl>
+                <div><dt data-fr="Compétence">Skill</dt><dd data-fr="Développer des applications temps réel, des prototypes et des expériences tactiles pour les expositions.">Develop real-time applications, prototypes and touchscreen experiences for exhibitions.</dd></div>
+                <div><dt data-fr="Mise en pratique">Practice</dt><dd data-fr="Architecture C#, gestion des états et des interactions, builds WebGL et adaptation aux contraintes matérielles.">C# architecture, state and interaction management, WebGL builds and adaptation to hardware constraints.</dd></div>
+                <div><dt>Technologies</dt><dd>Unity, C#, WebGL</dd></div>
+              </dl>
+            </article>
+
+            <article class="work-card reveal">
+              <div>
+                <p class="work-type" data-fr="05 / Infrastructure">05 / Infrastructure</p>
+                <h2 data-fr="Services backend, déploiement et maintenance">Backend services, deployment and maintenance</h2>
+              </div>
+              <dl>
+                <div><dt data-fr="Compétence">Skill</dt><dd data-fr="Relier les applications aux services backend et préparer leur fonctionnement sur serveur local ou borne.">Connect applications to backend services and prepare them to run on local servers or kiosks.</dd></div>
+                <div><dt data-fr="Mise en pratique">Practice</dt><dd data-fr="Intégration API et sockets, scripts de lancement, logs, sauvegardes et diagnostic des incidents.">API and socket integration, launch scripts, logs, backups and incident diagnosis.</dd></div>
+                <div><dt>Technologies</dt><dd>C#, Python, Node.js, APIs, Sockets</dd></div>
+              </dl>
+            </article>
+
           </div>
         </div>
-      </div>
-    </div>
-  </div>
+      </section>
 
-  <div class="project-container">
-    <main class="project-content">
-      <div class="project-top" aria-label="Project">
-        <div class="project-top-row">
-          <h1 id="project-title" class="project-title"></h1>
+      <section class="section contact-section" aria-labelledby="contact-title">
+        <div class="section-inner contact-panel reveal">
+          <p class="section-kicker" data-fr="Contact direct">Direct contact</p>
+          <h2 id="contact-title" data-fr="Besoin de ces compétences pour votre équipe ?">Need these skills for your team?</h2>
+          <p data-fr="Envoyez le besoin, la contrainte ou l’environnement visé. Je vous réponds avec une approche concrète.">Send the need, constraint or target environment. I will answer with a concrete approach.</p>
+          <div class="contact-actions">
+            <a class="button primary" href="mailto:nathanaelamd@gmail.com" data-fr="Envoyer un email">Send an email</a>
+            <a class="contact-email" href="mailto:nathanaelamd@gmail.com">nathanaelamd@gmail.com</a>
+          </div>
         </div>
-        <p id="project-description" class="project-description"></p>
-      </div>
-
-      <div id="project-sections" aria-label="Project content"></div>
-
-      <section id="custom-link-section" class="custom-link-section" style="display: none;">
-        <a id="custom-link" href="#" target="_blank" rel="noopener" class="custom-btn">
-          <span id="custom-link-text">View</span>
-        </a>
       </section>
     </main>
-  </div>
 
-  <div class="scanlines"></div>
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <p><strong>Styloxis</strong> · <span data-fr="Belgique">Belgium</span></p>
+        <p>Web · App · Backend · Kiosk · <span data-fr="IA">AI</span></p>
+        <p><a href="mailto:nathanaelamd@gmail.com">Contact</a> · © 2026 Styloxis</p>
+      </div>
+    </footer>
 
-  <script type="module" src="./script/project.js"></script>
-</body>
+    <script src="./script/main.js?v=20260529-13" defer></script>
+  </body>
 </html>

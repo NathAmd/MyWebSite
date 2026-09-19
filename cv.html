@@ -4,163 +4,172 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="index, follow" />
-    <meta name="color-scheme" content="light" />
-    <title>CV — Nathanaël A.</title>
+    <meta name="author" content="Nathanaël A." />
+    <meta name="theme-color" content="#050607" />
+    <title>CV — Nathanaël A. | Styloxis</title>
     <meta
       name="description"
-      content="Nathanaël A. — full-stack software developer (C#, JavaScript, HTML/CSS, Unity, Three.js/WebGL, Python, applied AI integrations)."
+      content="Structured CV of Nathanaël A., Belgium-based web and interactive software developer: websites, apps, backends, kiosks, AI and technical systems."
+      data-fr-content="CV structuré de Nathanaël A., développeur web et logiciel interactif basé en Belgique : sites, apps, backends, kiosks, IA et systèmes techniques."
     />
-    <link rel="stylesheet" href="./css/cv.css" />
+    <link rel="canonical" href="https://styloxis.be/cv.html" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&amp;family=IBM+Plex+Sans+Condensed:wght@500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/cv.css?v=20260529-13" />
   </head>
   <body>
-    <div class="cv-actions" aria-label="Actions">
-      <a class="btn" href="./index.html" aria-label="Back to portfolio">← Portfolio</a>
-      <button class="btn primary" type="button" onclick="window.print()" aria-label="Print or export as PDF">
-        Print / PDF
-      </button>
+    <div class="page-actions" aria-label="CV actions" data-fr-label="Actions CV">
+      <a class="action-link" href="./index.html" data-fr="Retour au site">Back to site</a>
+      <button class="action-link primary" type="button" onclick="window.print()" data-fr="Imprimer / PDF">Print / PDF</button>
+      <div class="language-switch" aria-label="Language">
+        <button type="button" data-lang-option="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang-option="fr" aria-pressed="false">FR</button>
+      </div>
     </div>
 
-    <article class="cv-page" aria-label="CV">
+    <main class="cv-page" aria-label="CV of Nathanaël A." data-fr-label="CV de Nathanaël A.">
       <header class="cv-header">
-        <div class="cv-identity">
-          <h1 class="cv-name">Nathanaël A.</h1>
-          <p class="cv-title">Full-stack software developer</p>
+        <div>
+          <p class="cv-brand">Styloxis</p>
+          <h1>Nathanaël A.</h1>
+          <p class="cv-title" data-fr="Développeur web et logiciel interactif">Web and interactive software developer</p>
         </div>
-
-        <ul class="cv-contact" aria-label="Contact">
-          <li>Belgium</li>
-          <li><a href="mailto:nathanaelamd@gmail.com">nathanaelamd@gmail.com</a></li>
-          <li><a href="https://styloxis.be" target="_blank" rel="noopener">styloxis.be</a></li>
-        </ul>
+        <address class="cv-contact">
+          <span data-fr="Basé en Belgique">Belgium-based</span>
+          <a href="mailto:nathanaelamd@gmail.com">nathanaelamd@gmail.com</a>
+          <a href="https://styloxis.be">styloxis.be</a>
+        </address>
       </header>
 
-      <div class="cv-grid">
-        <main class="cv-main">
-          <section class="cv-section">
-            <h2>Profile</h2>
-            <p>
-              Full-stack software developer focused on designing, shipping and maintaining products used in real-world
-              conditions. Several years of hands-on development, backed by professional experience as a solo developer
-              on interactive web, mobile and real-time applications. Used to carrying projects end-to-end: clarify the
-              real need, build a solid technical base, absorb production constraints, and evolve the product into a
-              reliable, understandable solution that stays maintainable over time.
-            </p>
-          </section>
+      <section class="cv-section profile" aria-labelledby="profile-title">
+        <h2 id="profile-title" data-fr="Profil">Profile</h2>
+        <p data-fr="Développeur orienté produits concrets : sites web, applications, backends, interfaces kiosk/exposition, intégrations IA et outils techniques. J’interviens quand un besoin numérique doit devenir une interface claire, un système maintenable et un déploiement utilisable en conditions réelles.">
+          Developer focused on concrete products: websites, applications, backends, kiosk/exhibition interfaces, AI integrations and technical tools. I step in when a digital need has to become a clear interface, a maintainable system and a deployment that works in real conditions.
+        </p>
+      </section>
 
-          <section class="cv-section">
-            <h2>Professional experience</h2>
-            <div class="cv-role">
-              <div class="cv-role-head">
-                <h3>Exhibition Hub — Full-stack software developer</h3>
-                <p class="cv-role-meta">2024 – 2025 · Solo developer</p>
+      <div class="cv-layout">
+        <div class="cv-main">
+          <section class="cv-section" aria-labelledby="experience-title">
+            <h2 id="experience-title" data-fr="Expérience">Experience</h2>
+            <article class="cv-role">
+              <div class="role-heading">
+                <div>
+                  <h3>Exhibition Hub — Software Engineer</h3>
+                  <p data-fr="Applications interactives pour expositions et expériences publiques">Interactive applications for exhibitions and public-facing experiences</p>
+                </div>
+                <span data-fr="2024-présent">2024-present</span>
               </div>
               <ul>
-                <li>Developed and maintained interactive applications used by the public in exhibitions.</li>
-                <li>Designed and built cross-platform mobile apps (Android / iOS): UI, logic, integrations, builds and delivery.</li>
-                <li>Owned projects end-to-end: scoping, technical design, development, integration, production and fixes.</li>
-                <li>Built complete interactive journeys: quizzes, decision-based experiences, interactive maps, audio guides.</li>
-                <li>Integrated AI solutions (SDXL, YOLO) into existing tools and experiences.</li>
-                <li>Owned technical decisions and production stability.</li>
-                <li>Handled on-site constraints: performance, reliability, mixed devices, heavy public usage.</li>
+                <li data-fr="Construis et maintiens des applications utilisées par des visiteurs dans des environnements d’exposition.">Build and maintain applications used by visitors in exhibition environments.</li>
+                <li data-fr="Travaille sur web, mobile, Unity, Python et outils IA selon les contraintes du produit.">Work across web, mobile, Unity, Python and AI tools depending on product constraints.</li>
+                <li data-fr="Prends en charge l’implémentation, l’intégration, le support au déploiement, le debug et les corrections en production.">Handle implementation, integration, deployment support, debugging and production fixes.</li>
+                <li data-fr="Porte attention à la clarté UX, au comportement stable, au code maintenable et à la livraison pratique.">Focus on clear UX, stable behavior, maintainable code and practical delivery.</li>
               </ul>
-              <p class="cv-stack">
-                <span class="cv-stack-label">Tech stack:</span> C#, HTML, CSS, JavaScript, Python, Unity, Three.js / WebGL, applied AI integrations
-              </p>
-              <p class="cv-note">→ Shipped and operated in real-world conditions on interactive kiosks and mobile devices.</p>
+            </article>
+
+            <article class="cv-role">
+              <div class="role-heading">
+                <div>
+                  <h3 data-fr="Développement autonome et prototypage">Independent development and prototyping</h3>
+                  <p data-fr="Pratique personnelle du développement web, interactif et de l’automatisation">Personal practice in web development, interactive software and automation</p>
+                </div>
+                <span>&lt; 2024</span>
+              </div>
+              <ul>
+                <li data-fr="Développe mes compétences en JavaScript, C#, Unity et Python à travers des sites, prototypes interactifs et scripts d’automatisation.">Developed skills in JavaScript, C#, Unity and Python through websites, interactive prototypes and automation scripts.</li>
+                <li data-fr="Prends en charge le cycle de développement : interface, logique applicative, gestion des fichiers, déploiement et débogage.">Handled the development cycle: interfaces, application logic, file management, deployment and debugging.</li>
+              </ul>
+            </article>
+          </section>
+
+          <section class="cv-section" aria-labelledby="capabilities-title">
+            <h2 id="capabilities-title" data-fr="Compétences professionnelles">Professional skills</h2>
+            <div class="capability-list">
+              <article>
+                <h3 data-fr="Interfaces web et mobiles">Web and mobile interfaces</h3>
+                <p data-fr="Sites rapides, outils internes, tableaux de suivi, apps Android/iOS, parcours QR, audio, formulaires et navigation claire.">Fast websites, internal tools, tracking dashboards, Android/iOS apps, QR flows, audio, forms and clear navigation.</p>
+              </article>
+              <article>
+                <h3 data-fr="Expériences interactives">Interactive experiences</h3>
+                <p data-fr="Bornes tactiles, cartes, interfaces d’exposition, usages publics, modes locaux et parcours pour utilisateurs non techniques.">Touch kiosks, maps, exhibition interfaces, public usage, local modes and flows for non-technical users.</p>
+              </article>
+              <article>
+                <h3 data-fr="Unity et temps réel">Unity and real-time</h3>
+                <p data-fr="Prototypes Unity, WebGL, logique temps réel, simulations, outils interactifs et contraintes de build.">Unity prototypes, WebGL, real-time logic, simulations, interactive tools and build constraints.</p>
+              </article>
+              <article>
+                <h3 data-fr="Serveurs et automatisation">Servers and automation</h3>
+                <p data-fr="APIs, sockets, serveurs locaux, logs, sauvegardes, launchers, SMTP, scripts et intégrations IA contrôlées.">APIs, sockets, local servers, logs, backups, launchers, SMTP, scripts and controlled AI integrations.</p>
+              </article>
             </div>
           </section>
 
-          <section class="cv-section">
-            <h2>Projects & achievements</h2>
+          <section class="cv-section" aria-labelledby="work-style-title">
+            <h2 id="work-style-title" data-fr="Méthode">Method</h2>
             <ul>
-              <li>Interactive quizzes and multiple-choice experiences deployed in public exhibitions.</li>
-              <li>Short interactive games designed for heavy use without supervision.</li>
-              <li>Interactive maps with geographic navigation and dynamic content.</li>
-              <li>Mobile audio guides (Android / iOS) with audio playback, QR scanning and content management.</li>
-              <li>Projects combining 3D rendering, interactivity and AI (image generation, computer vision).</li>
+              <li data-fr="Clarifier le besoin réel avant de choisir la technologie ou l’interface.">Clarify the real need before choosing the technology or interface.</li>
+              <li data-fr="Construire une première base propre, puis itérer avec les contraintes de production en tête.">Build a clean first base, then iterate with production constraints in mind.</li>
+              <li data-fr="Garder les systèmes lisibles, pratiques et faciles à maintenir.">Keep systems readable, practical and easy to maintain.</li>
+              <li data-fr="Déboguer la chaîne complète : interface, logique, intégrations, appareils et déploiement.">Debug the full chain: interface, logic, integrations, devices and deployment.</li>
             </ul>
           </section>
+        </div>
 
-          <section class="cv-section">
-            <h2>Independent technical experience</h2>
-            <ul>
-              <li>Building personal and community projects for several years.</li>
-              <li>
-                Created a widely-used mod for a VR game (hundreds of thousands of downloads), involving understanding
-                existing systems, clean integration, and keeping long-term compatibility.
-              </li>
-            </ul>
-            <p class="cv-parenthetical">
-              (This personal practice strongly contributed to technical autonomy and the ability to understand complex
-              systems.)
-            </p>
-          </section>
-
-          <section class="cv-section">
-            <h2>Work method</h2>
-            <ul>
-              <li>Clarify the real need before implementation.</li>
-              <li>Quickly build a functional, testable baseline.</li>
-              <li>Fix, improve and stabilise over time.</li>
-              <li>Keep projects readable, modifiable and sustainable.</li>
-            </ul>
-          </section>
-        </main>
-
-        <aside class="cv-aside" aria-label="Skills and information">
-          <section class="cv-section">
-            <h2>Skills</h2>
-
-            <div class="cv-block">
-              <h3>Programming languages</h3>
-              <ul class="tag-list" aria-label="Programming languages">
-                <li>C#</li>
-                <li>JavaScript</li>
-                <li>HTML / CSS</li>
-              </ul>
+        <aside class="cv-side" aria-label="Technical stack and contact" data-fr-label="Stack technique et contact">
+          <section class="cv-section" aria-labelledby="stack-title">
+            <h2 id="stack-title" data-fr="Stack technique">Technical stack</h2>
+            <div class="stack-group">
+              <h3 data-fr="Langages">Languages</h3>
+              <p>C#, JavaScript, HTML, CSS, Python</p>
             </div>
-
-            <div class="cv-block">
-              <h3>Technologies</h3>
-              <ul class="tag-list" aria-label="Technologies">
-                <li>Python</li>
-                <li>Unity</li>
-                <li>Three.js / WebGL</li>
-                <li>AI: SDXL, YOLO</li>
-              </ul>
+            <div class="stack-group">
+              <h3 data-fr="Applications">Applications</h3>
+              <p data-fr=".NET MAUI, Blazor, Unity, WebGL, interfaces tactiles, logique métier">.NET MAUI, Blazor, Unity, WebGL, touch interfaces, business logic</p>
             </div>
-
-            <div class="cv-block">
-              <h3>Approach</h3>
-              <ul class="compact">
-                <li>Designing clear, long-lived systems</li>
-                <li>Reading and taking over existing code</li>
-                <li>Fast adaptation to new technologies depending on project needs</li>
-              </ul>
+            <div class="stack-group">
+              <h3 data-fr="IA &amp; automatisation">AI &amp; automation</h3>
+              <p data-fr="YOLO, SDXL, vision par ordinateur, outils locaux, scripts, APIs">YOLO, SDXL, computer vision, local tools, scripts, APIs</p>
+            </div>
+            <div class="stack-group">
+              <h3 data-fr="Systèmes">Systems</h3>
+              <p data-fr="APIs, sockets, serveurs locaux, logs, SMTP, déploiement, GitHub Pages">APIs, sockets, local servers, logs, SMTP, deployment, GitHub Pages</p>
             </div>
           </section>
 
-          <section class="cv-section">
-            <h2>Languages</h2>
-            <ul class="compact">
-              <li>French — native</li>
-              <li>English — basic (not fluent)</li>
+          <section class="cv-section" aria-labelledby="focus-title">
+            <h2 id="focus-title">Focus</h2>
+            <ul class="compact-list">
+              <li data-fr="Sites web et outils métier">Websites and business tools</li>
+              <li data-fr="Applications kiosk">Kiosk applications</li>
+              <li data-fr="Expériences publiques">Public-facing experiences</li>
+              <li data-fr="Applications mobiles visiteurs">Visitor mobile applications</li>
+              <li data-fr="Cartes interactives">Interactive maps</li>
+              <li data-fr="Corrections production">Production fixes</li>
             </ul>
           </section>
 
-          <section class="cv-section">
-            <h2>Additional information</h2>
-            <ul class="compact">
-              <li>Comfortable in environments where autonomy and responsibility are expected.</li>
-              <li>Strong interest in interactive systems, technical products and real-world operational constraints.</li>
-              <li>Solution-oriented approach over a fixed stack.</li>
+          <section class="cv-section" aria-labelledby="languages-title">
+            <h2 id="languages-title" data-fr="Langues">Languages</h2>
+            <ul class="compact-list">
+              <li data-fr="Français — natif">French — native</li>
+              <li data-fr="Anglais — communication technique">English — technical communication</li>
             </ul>
+          </section>
+
+          <section class="cv-section" aria-labelledby="contact-title">
+            <h2 id="contact-title">Contact</h2>
+            <p><a href="mailto:nathanaelamd@gmail.com">nathanaelamd@gmail.com</a></p>
           </section>
         </aside>
       </div>
+    </main>
 
-    </article>
-
-    <script type="module" src="./script/cv.js"></script>
+    <script src="./script/main.js?v=20260529-13" defer></script>
   </body>
 </html>

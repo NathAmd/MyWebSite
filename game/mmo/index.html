@@ -1,28 +1,60 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>MMO Project - Styloxis Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Details and showcase of the MMO tactical turn-based game project by Styloxis." />
-  <link rel="stylesheet" href="../../css/global.css">
-</head>
-<body>
-  <header>
-    <h1>MMO Project</h1>
-    <nav>
-      <a href="/">Home</a>
-      <!-- Add other navigation links if needed -->
-    </nav>
-  </header>
-  <main>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, follow" />
+    <meta name="theme-color" content="#050607" />
+    <title data-fr-title="Référence archivée — Styloxis">Archived Reference — Styloxis</title>
+    <meta name="description" content="Noindexed archived page for an older Styloxis reference." data-fr-content="Page archivée noindexée pour une ancienne référence Styloxis." />
+    <link rel="canonical" href="https://styloxis.be/" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&amp;family=IBM+Plex+Sans+Condensed:wght@500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../css/global.css?v=20260529-12" />
+    <link rel="stylesheet" href="../../css/main.css?v=20260529-12" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main" data-fr="Aller au contenu">Skip to content</a>
 
-  </main>
-  <footer>
-    &copy; <span id="year"></span> Styloxis.
-  </footer>
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-</body>
+    <header class="site-header" data-header>
+      <a class="brand" href="../../index.html" aria-label="Styloxis home" data-fr-label="Accueil Styloxis">
+        <span class="brand-mark" aria-hidden="true">SX</span>
+        <span>Styloxis</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation" data-fr-label="Navigation principale">
+        <a href="../../index.html#build" data-fr="Construire">Build</a>
+        <a href="../../index.html#approach" data-fr="Approche">Approach</a>
+        <a href="../../index.html#systems" data-fr="Technique">Technical</a>
+        <a href="../../cv.html">CV</a>
+        <a href="../../index.html#contact">Contact</a>
+      </nav>
+      <div class="language-switch" aria-label="Language">
+        <button type="button" data-lang-option="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang-option="fr" aria-pressed="false">FR</button>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="section contact-section" aria-labelledby="archive-title">
+        <div class="section-inner contact-panel reveal">
+          <p class="section-kicker" data-fr="Page archivée">Archived page</p>
+          <h1 class="hero-title" id="archive-title" data-fr="Cette référence a été déplacée.">This reference has moved.</h1>
+          <p data-fr="Le site public présente maintenant les compétences, l’approche et les cas d’usage sans conserver d’anciennes pages de prototypes au centre de la navigation.">
+            The public site now presents capabilities, approach and use cases without keeping older prototype pages at the center of navigation.
+          </p>
+          <div class="contact-actions">
+            <a class="button primary" href="../../index.html" data-fr="Retour à Styloxis">Back to Styloxis</a>
+            <a class="button secondary" href="../../index.html#build" data-fr="Voir les compétences">View capabilities</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="../../script/main.js?v=20260529-13" defer></script>
+  </body>
 </html>
